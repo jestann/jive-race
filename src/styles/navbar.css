@@ -9,27 +9,27 @@
   padding: 20px;
 }
 
-.active {
-  font-weight: bold;
-}
-
-.navlink Link {
+.navlink {
   color: white;
   text-decoration: none;
 }
 
-.navlink Link:hover {
+.navlink:hover {
   font-weight: bold;
   cursor: pointer;
 }
 
-.navlink Link::after { /* protects positioning during hover-bold */
+.navlink::after { /* protects positioning during hover-bold */
   display: block;
   content: attr(label);
   font-weight: bold;
   height: 0;
   overflow: hidden;
   visibility: hidden;
+}
+
+.active {
+  font-weight: bold;
 }
 
 .logo {

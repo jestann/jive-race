@@ -16,7 +16,7 @@ class Test extends Component {
       <div className="Test">
         <h1>{this.props.title}</h1>
         <p>{this.state.greeting} world!</p>
-        <button className="button" onClick={() => this.changeGreeting()}>Change the greeting!</button>
+        <button onClick={() => this.changeGreeting()}>Change the greeting!</button>
       </div>
     )
   }

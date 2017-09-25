@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './../styles/navbar.css'
 
 class Navlink extends Component {
   render () {
     return (
-      <div className='navlink'>
-        <Link {...this.props} activeClassName='active'>
+      <div>
+        <NavLink {...this.props} exact className='navlink' activeStyle={{ fontWeight: "bold" }} >
           {this.props.label}
-        </Link>
+        </NavLink>
       </div>
     )
   }
@@ -16,4 +16,5 @@ class Navlink extends Component {
 
 export default Navlink
 
-// <Link {...this.props} activeClassName="active"/>
+// "exact" before className fixed '/' link always active
+// activeClassName doesn't work currently

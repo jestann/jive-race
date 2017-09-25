@@ -4,7 +4,7 @@ import './../styles/main.css'
 class Register extends Component {
   render () {
     return (
-      <div className='register'>
+      <div className='register container'>
         Register
       </div>
     )

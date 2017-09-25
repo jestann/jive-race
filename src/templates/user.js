@@ -4,11 +4,13 @@ import './../styles/main.css'
 class User extends Component {
   render () {
     return (
-      <div className='user'>
-        UserId: {this.props.params.userId}
+      <div className='user container'>
+        User
       </div>
     )
   }
 }
 
 export default User
+
+// {this.props.params.userId}

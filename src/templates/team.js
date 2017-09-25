@@ -4,7 +4,7 @@ import './../styles/main.css'
 class Team extends Component {
   render () {
     return (
-      <div className='team'>
+      <div className='team container'>
         Team
       </div>
     )
