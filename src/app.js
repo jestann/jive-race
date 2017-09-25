@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
+import { Router, Route, hashHistory } from 'react-router'
 import './styles/app.css'
 
 import Navbar from './components/navbar'
 import Main from './components/main'
 
 class App extends Component {
-  constructor (props) {
-    super(props)
+  constructor () {
+    super()
     this.state = { currentTab: "Home" }
-    this.state.changeTab = (tab) => {
+    this.setState({ changeTab: (tab) => {
       this.setState({ currentTab: tab })
-    }
+    }})
   }
 
   render() {

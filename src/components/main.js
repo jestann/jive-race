@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import './../styles/main.css'
-import Test from './test'
+import MainRouter from './../router'
 
 class Main extends Component {
   constructor (props) {
-      super(props)
+    super(props)
   }
   
   render () {
@@ -12,6 +12,7 @@ class Main extends Component {
       <div className="main">
         <h1>Main Content</h1>
         <p>Current tab: {this.props.currentTab}</p>
+        { this.props.children }
       </div>
     )
   }

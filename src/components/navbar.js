@@ -6,9 +6,9 @@ import Navlink from './navlink'
 
 class Navbar extends Component {
   constructor (props) {
-      super(props)
+    super(props)
   }
-    
+  
   render () {
     return (
       <div className="navbar">

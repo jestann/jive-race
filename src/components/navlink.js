@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import './../styles/navbar.css'
 
 class Navlink extends Component {
-  constructor (props) { // is this a useless constructor?
+  constructor (props) {
     super(props)
   }
   
@@ -12,9 +12,9 @@ class Navlink extends Component {
     
     return (
       <div className="navlink">
-        <a content={this.props.label} className={fontClass} onClick={() => this.props.changeTab(this.props.label)}>
+        <Link to={this.props.link} content={this.props.label} className={fontClass} onClick={() => this.props.changeTab(this.props.label)}>
           {this.props.label}
-        </a>
+        </Link>
       </div>
     )
   }

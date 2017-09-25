@@ -9,17 +9,17 @@
   padding: 20px;
 }
 
-.navlink a {
+.navlink Link {
   color: white;
   text-decoration: none;
 }
 
-.navlink a:hover {
+.navlink Link:hover {
   font-weight: bold;
   cursor: pointer;
 }
 
-.navlink a::after { /* protects positioning during hover-bold */
+.navlink Link::after { /* protects positioning during hover-bold */
   display: block;
   content: attr(content);
   font-weight: bold;
