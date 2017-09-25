@@ -3,16 +3,10 @@ import { Link } from 'react-router-dom'
 import './../styles/navbar.css'
 
 class Navlink extends Component {
-  constructor (props) {
-    super(props)
-  }
-  
   render () {
-    let fontClass = (this.props.currentTab === this.props.label) ? "current" : ""
-    
     return (
-      <div className="navlink">
-        <Link to={this.props.link} content={this.props.label} className={fontClass} onClick={() => this.props.changeTab(this.props.label)}>
+      <div className='navlink'>
+        <Link {...this.props} activeClassName='active'>
           {this.props.label}
         </Link>
       </div>
@@ -21,3 +15,5 @@ class Navlink extends Component {
 }
 
 export default Navlink
+
+// <Link {...this.props} activeClassName="active"/>

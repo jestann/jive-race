@@ -5,7 +5,7 @@ class User extends Component {
   render () {
     return (
       <div className='user'>
-        User
+        UserId: {this.props.params.userId}
       </div>
     )
   }

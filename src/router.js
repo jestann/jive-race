@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Router, Route } from 'react-router'
 
+import App from './app'
 import Main from './components/main'
 
 import Home from './templates/home'
@@ -17,16 +18,18 @@ class MainRouter extends Component {
   render () {
     return (
       <Router>
-        <Route component={Main}>
-          <Route path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/register" component={Register} />
-          <Route path="/race" component={Race} />
-          <Route path="/contact" component={Contact} />
-    
-          <Route path="/user" component={User} />
-          <Route path="/teams" component={Teams} />
-          <Route path="/team" component={Team} />
+        <Route path="/" component={App} >
+          <Route component={Main}>
+            <Route path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/register" component={Register} />
+            <Route path="/race" component={Race} />
+            <Route path="/contact" component={Contact} />
+        
+            <Route path="/user" component={User} />
+            <Route path="/teams" component={Teams} />
+            <Route path="/team" component={Team} />
+          </Route>
         </Route>
       </Router>
     )

@@ -9,6 +9,10 @@
   padding: 20px;
 }
 
+.active {
+  font-weight: bold;
+}
+
 .navlink Link {
   color: white;
   text-decoration: none;
@@ -21,15 +25,11 @@
 
 .navlink Link::after { /* protects positioning during hover-bold */
   display: block;
-  content: attr(content);
+  content: attr(label);
   font-weight: bold;
   height: 0;
   overflow: hidden;
   visibility: hidden;
-}
-
-.current {
-  font-weight: bold;
 }
 
 .logo {

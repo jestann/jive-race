@@ -5,19 +5,15 @@ import Logo from './logo'
 import Navlink from './navlink'
 
 class Navbar extends Component {
-  constructor (props) {
-    super(props)
-  }
-  
   render () {
     return (
       <div className="navbar">
         <Logo />
-        <Navlink link="" label="Contact" changeTab={this.props.changeTab} currentTab={this.props.currentTab} />
-        <Navlink link="" label="Teams" changeTab={this.props.changeTab} currentTab={this.props.currentTab} />
-        <Navlink link="" label="Register" changeTab={this.props.changeTab} currentTab={this.props.currentTab} />
-        <Navlink link="" label="Race 2018" changeTab={this.props.changeTab} currentTab={this.props.currentTab} />
-        <Navlink link="" label="Home" changeTab={this.props.changeTab} currentTab={this.props.currentTab} />
+        <Navlink to="/contact" label="Contact" />
+        <Navlink to="/teams" label="Teams" />
+        <Navlink to="/register" label="Register" />
+        <Navlink to="/race" label="Race 2018" />
+        <Navlink to="/" label="Home" />
       </div>
     )
   }
