@@ -1,10 +1,74 @@
 .main {
-  background-color: white;
+  background-color: #666;
+  color: white;
   text-align: center;
-  height: 100%;
 }
 
+/* Template Container styling */
+
 .container {
-  padding: 30px;
-  
+  background-color: #ddd;
+  position: absolute;
+  top: 80px;
+  bottom: 0px;
+  width: 100%;
+  z-index: 0;
+}
+
+.hero {
+  background-color: #fff;
+  position: absolute;
+  height: 100%;
+  left: 300px;
+  right: 300px;
+}
+
+.title {
+  background-color: #666;
+  padding: 15px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.body {
+  color: #222;
+  text-align: left;
+  margin: 40px;
+}
+
+
+/* Button styling */
+
+.button {
+  float: right;
+  /* background-color: #888; */
+  margin-left: 10px;
+  border-radius: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.button:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button .label {
+  float: left;
+  margin-left: 5px;
+  margin-right: 2px;
+}
+
+.button .label::after { /* protects positioning during hover-bold */
+  display: block;
+  content: attr(content);
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.button .image {
+  float: left;
+  margin-bottom: 5px;
 }

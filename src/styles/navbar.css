@@ -1,15 +1,62 @@
 .navbar {
   background-color: #333;
+  height: 80px;
+  z-index: 100;
+}
+
+/* Left side Logo & Greeting */
+
+.logo {
+  float: left;
   height: 60px;
 }
 
-.navlink {
-  float: right;
-  right: 20px;
-  padding: 20px;
+.logo-text {
+  float: left;
+  padding-top: 10px;
 }
 
+.logo-title {
+  margin-left: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.logo-image {
+  float: left;
+  width: 60px;
+  margin-top: 20px;
+  animation: logo-image-spin infinite 20s linear;
+}
+
+@keyframes logo-image-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.greeting {
+  margin-left: 5px;
+  margin-top: 5px;
+  color: white;
+}
+
+.greeting-text {
+  margin-top: 0px;
+}
+
+/* Button styling in main.css */
+
+
+
+/* Right side Navigation links */
+
 .navlink {
+  float: right;
+  margin-top: 10px;
+  padding: 20px;
   color: white;
   text-decoration: none;
 }
@@ -30,31 +77,4 @@
 
 .active {
   font-weight: bold;
-}
-
-.logo {
-  float: left;
-  height: 60px;
-}
-
-.logo-text {
-  float: left;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 0px;
-  color: white;
-  font-weight: bold;
-  font-size: 25px;
-}
-
-.logo-image {
-  float: left;
-  width: 60px;
-  margin-top: 10px;
-  animation: logo-image-spin infinite 20s linear;
-}
-
-@keyframes logo-image-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
