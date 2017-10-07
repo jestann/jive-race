@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import Container from './../components/container'
 import './../styles/main.css'
 
+import content from './../content/about'
+
 class Race extends Component {
   render () {
-    let content = <div><p>hello</p><p>hello test</p><p>testing</p></div>
     return (
-      <Container title="Race 2018" content={content} cssName="race" />
+      <Container title="Race 2018" markdown={content} cssLabel="race" />
     )
   }
 }

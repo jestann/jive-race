@@ -13,7 +13,7 @@ class Greeting extends Component {
   }
   
   login () {
-    this.setState({ isLoggedIn: true, username: this.props.username })
+    this.setState({ isLoggedIn: true, username: "Jess" })
   }
   
   logout () {
@@ -29,15 +29,15 @@ class Greeting extends Component {
       return (
         <div className="greeting">
           <span className="greeting-text">Welcome, {this.state.username}.</span>
-          <Button label="Log Out" src={logoutImg.src} alt={logoutImg.alt} cssName="logout" onClick={() => this.logout()} />
+          <Button label="Log Out" src={logoutImg.src} alt={logoutImg.alt} cssLabel="logout hover-bold" onClick={() => this.logout()} />
         </div>
       )
     } else {
       return (
         <div className="greeting">
           <span className="greeting-text">Welcome, Guest.</span>
-          <Button label="Log In" src={loginImg.src} alt={loginImg.alt} cssName="login" onClick={() => this.login()} />
-          <Button label="Sign Up" src={signupImg.src} alt={signupImg.alt} cssName="signup" onClick={() => this.signup()} />
+          <Button label="Log In" src={loginImg.src} alt={loginImg.alt} cssLabel="login hover-bold" onClick={() => this.login()} />
+          <Button label="Sign Up" src={signupImg.src} alt={signupImg.alt} cssLabel="signup hover-bold" onClick={() => this.signup()} />
         </div>
       )
     }

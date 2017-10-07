@@ -1,0 +1,58 @@
+/* Teams styling */
+
+.joined {
+  display: block;
+  margin-left: 20px;
+}
+
+
+
+/* TeamSmall styling */
+
+.team-small {
+  float: left;
+  width: 18%;
+  min-height: 25%;
+  margin: 20px;
+  border-radius: 5px;
+  padding: 20px 30px;
+  background-color: #07a3a8;
+  color: white;
+}
+
+.team-small .heading {
+  font-size: 20px;
+  padding: 10px 0px;
+  color: white;
+  text-decoration: none;
+}
+
+.team-small .heading:hover {
+  color: black;
+}
+
+.team-small .body {
+  font-size: 15px;
+  padding: 10px 0px;
+  padding-bottom: 5px;
+  color: white;
+  min-height: 40px;
+}
+
+.team-small .button {
+  padding-top: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.team-small .button:hover {
+  color: black;
+}
+
+.team-small .already {
+  padding-top: 10px;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: bold;
+  color: black;
+}

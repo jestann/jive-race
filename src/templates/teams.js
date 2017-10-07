@@ -1,37 +1,41 @@
 import React, { Component } from 'react'
 import Container from './../components/container'
-import './../styles/main.css'
-
-import TeamSmall from './teamSmall'
+import TeamSmall from './../components/teamSmall'
+import './../styles/teams.css'
 
 class Teams extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      teams: [{name: "hi", body: "hello"}, {name: "hi", body: "hello"}]
+      joined: false,
+      teams: [
+        { name: "One", body: "testing and talking and testing and talking" }, 
+        { name: "Two", body: "so much to say about all this stuff" }, 
+        { name: "Three", body: "test this here" }
+      ]
     }
   }
   
   handleDelete (i) {
-    console.log("delete")
-    console.log(this.state)
-    let teams = this.state.teams.slice() // still modifies state directly without slice
+    if (i === this.state.joined) { this.setState({ joined: false }) }
+    let teams = this.state.teams.slice() // prevents modifying state directly
     teams.splice(i, 1)
-    this.setState({teams: teams})
+    this.setState({ teams: teams })
   }
   
-  componentWillMount() {
-    console.log("yay")
-    // will render once before get data
-    
+  handleJoin (i) {
+    this.setState({ joined: i })
   }
-  
+
   render () {
-    let content = this.state.teams.map((team, i) =>
-          <TeamSmall name={team.name} body={team.body} key={i} handleDelete={() => this.handleDelete(i)} />
-        )
+    let teams = this.state.teams.map((team, i) =>
+      <TeamSmall name={team.name} body={team.body} key={i} joined={this.state.joined === i} handleDelete={() => this.handleDelete(i)} handleJoin={() => this.handleJoin(i)} />
+    )
+    let joined = (this.state.joined !== false) ? "joined: " + this.state.teams[this.state.joined].name : "Haven't joined a team yet."
+    let content = <div>{teams}<div className="joined">{joined}</div></div>
+    
     return (
-      <Container title="Teams" content={content} cssName="teams" />
+      <Container title="Teams" content={content} cssLabel="teams" />
     )
   }
 }
@@ -39,11 +43,6 @@ class Teams extends Component {
 export default Teams
 
 
-
-// Notes
-
-// use react life cycle methods
-// loading - componentDidMount(), also constructor
 // mount = dom is ready for manipulation
-// 1 - constructor, willmount, render, didmount
+// constructor, willmount, render, didmount
 // fetch / axios library

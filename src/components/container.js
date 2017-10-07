@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
+import Markdown from 'react-markdown'
+
 import Title from './../components/title'
 import './../styles/main.css'
 
 class Container extends Component {
   render (props) {
-    let heroCSS = 'hero ' + this.props.cssName
+    let content = (this.props.markdown) ? <Markdown source={this.props.markdown} /> : (this.props.content)
+    let cssLabel = 'hero ' + this.props.cssLabel
     return (
       <div className='container'>
         <Title title={this.props.title} />
-        <div className={heroCSS}>
+        <div className={cssLabel}>
           <div className='body'>
-            {this.props.content}
+            {content} 
           </div>
         </div>
       </div>

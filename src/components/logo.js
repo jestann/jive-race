@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Greeting from './greeting'
 import './../styles/navbar.css'
 
@@ -10,7 +11,7 @@ class Logo extends Component {
       <div className="logo">
         <img src={logo} className="logo-image" alt="logo" />
         <div className="logo-text">
-          <span className="logo-title">The Race</span>
+          <Link className="logo-title" to="/">The Race</Link>
           <Greeting />
         </div>
       </div>

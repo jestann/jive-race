@@ -1,0 +1,42 @@
+.form {
+  color: #222;
+  margin: 40px;
+}
+
+.form .heading {
+  font-size: 20px;
+}
+
+.form .body {
+  margin-left: 0px;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.form-box {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form-box .label {
+  margin-bottom: 10px;
+}
+
+.form-box .input {
+  width: 75%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ddd;
+  color: #666;
+  font-family: sans-serif;
+}
+
+.form-box .textarea {
+  height: 100px;
+  resize: none;
+}
+
+.return-form {
+  margin-top: 80px;
+}
