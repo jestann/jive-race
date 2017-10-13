@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Markdown from 'react-markdown'
 
 import Title from './../components/title'
+import ErrorBox from './../components/errorBox'
 import './../styles/main.css'
 
 class Container extends Component {
@@ -12,6 +13,7 @@ class Container extends Component {
       <div className='container'>
         <Title title={this.props.title} />
         <div className={cssLabel}>
+          <ErrorBox handleError={this.props.handleError} />
           <div className='body'>
             {content} 
           </div>
