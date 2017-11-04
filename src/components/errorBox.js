@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import './../styles/main.css'
+import './../styles/error.css'
 
 class ErrorBox extends Component {
-  render () {
-    let propsError = { success: false, code: 400, body: 'this is an error.' }
-    let error = propsError.body
+  render (props) {
+    let errorBoxVisible = this.props.isVisible ? "error-box" : "error-box hidden"
     return (
-      <div className='error-box'>
-        <div className='error-message'>{error}</div>
+      <div className={errorBoxVisible}>
+        <div className='error-message'>{this.props.error.body}</div>
+        <div className='error-close-button' onClick={this.props.handleError}>x</div>
       </div>
     )
   }

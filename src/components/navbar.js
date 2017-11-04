@@ -5,14 +5,14 @@ import Logo from './logo'
 import Navlink from './navlink'
 
 class Navbar extends Component {
-  render () {
+  render (props) {
     return (
       <div className="navbar">
-        <Logo />
+        <Logo {...props} />
         <Navlink to="/contact" label="Contact" />
-        <Navlink to="/teams" label="Teams" />
+        <Navlink to="/currentteams" label="Teams" />
         <Navlink to="/register" label="Register" />
-        <Navlink to="/race" label="Race 2018" />
+        <Navlink to="/currentrace" label="Race 2018" />
         <Navlink to="/" label="Home" />
       </div>
     )

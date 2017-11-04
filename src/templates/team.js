@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Container from './../components/container'
-import './../styles/teams.css'
+import './../styles/main.css'
 
 class Team extends Component {
   constructor (props) {
@@ -9,6 +9,7 @@ class Team extends Component {
     this.state = { 
       name: "One", 
       body: "We are the best team.", 
+      race: "2018",
       members: [
         { name: "Ann", age: 20 },
         { name: "Joe", age: 40 },
@@ -19,11 +20,16 @@ class Team extends Component {
   
   render () {
     let title = 'Team: ' + this.state.name
-    let members = this.state.members.map((member) => (<div><Link to="/user">{member.name}, age {member.age}</Link></div>))
+    let members = this.state.members.map((member, i) => (<div className="body-list-item" key={i}><Link to="/user">{member.name}</Link>, age {member.age}</div>))
     let content = (
       <div className='info'>
-        <div className='body'>{this.state.body}</div>
-        <div className='body'>{members}</div>
+        <div className='body'>Race: <Link to="/race">{this.state.race}</Link></div>
+        <div className='body'>Story: {this.state.body}</div>
+        <div className='body'>
+          <div className='body-header'>Members</div>
+          <div className='body-list'>{members}</div>
+        </div>
+        <div className='body-link'><Link to="/results">Results</Link></div>
       </div>
     )
     

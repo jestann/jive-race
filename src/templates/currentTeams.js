@@ -3,7 +3,7 @@ import Container from './../components/container'
 import TeamSmall from './../components/teamSmall'
 import './../styles/teams.css'
 
-class Teams extends Component {
+class CurrentTeams extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -40,7 +40,7 @@ class Teams extends Component {
   }
 }
 
-export default Teams
+export default CurrentTeams
 
 
 // mount = dom is ready for manipulation

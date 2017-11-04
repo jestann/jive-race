@@ -1,0 +1,30 @@
+.error-box {
+    background-color: #fbccb2;
+    border-radius: 5px;
+    padding: 20px;
+    padding-bottom: 40px;
+    margin: 30px;
+    margin-bottom: 40px;
+    color: red;
+}
+
+.error-box.hidden {
+    display: none;
+}
+
+.error-message {
+    float: left;
+    padding: 0px;
+}
+
+.error-close-button {
+    float: right;
+    margin: 0px;
+    color: red;
+    font-weight: bold;
+}
+
+.error-close-button:hover {
+    cursor: pointer;
+    color: white;
+}

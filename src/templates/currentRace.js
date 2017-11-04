@@ -4,12 +4,12 @@ import './../styles/main.css'
 
 import content from './../content/about'
 
-class Home extends Component {
-  render (props) {
+class CurrentRace extends Component {
+  render () {
     return (
-      <Container title="Home" markdown={content} cssLabel="home" {...props} />
+      <Container title="Race 2018" markdown={content} cssLabel="current-race" />
     )
   }
 }
 
-export default Home
+export default CurrentRace
