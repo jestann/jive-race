@@ -6,13 +6,13 @@ import './../styles/navbar.css'
 import logo from './../assets/logo.svg'
 
 class Logo extends Component {
-  render (props) {
+  render () {
     return (
       <div className="logo">
         <img src={logo} className="logo-image" alt="logo" />
         <div className="logo-text">
           <Link className="logo-title" to="/">The Race</Link>
-          <Greeting {...props} />
+          <Greeting {...this.props} />
         </div>
       </div>
     )

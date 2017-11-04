@@ -5,9 +5,9 @@ import './../styles/main.css'
 import content from './../content/about'
 
 class Home extends Component {
-  render (props) {
+  render () {
     return (
-      <Container title="Home" markdown={content} cssLabel="home" {...props} />
+      <Container title="Home" markdown={content} cssLabel="home" {...this.props} />
     )
   }
 }

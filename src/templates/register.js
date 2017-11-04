@@ -15,7 +15,7 @@ class Register extends Component {
     />
     
     return (
-      <Container title="Register" content={content} cssLabel="register" />
+      <Container title="Register" content={content} cssLabel="register" {...this.props} />
     )
   }
 }

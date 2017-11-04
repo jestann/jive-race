@@ -15,7 +15,7 @@ class App extends Component {
       token: "test token", // fetcher.token, 
       user: null, // fetcher.user, 
       error: { success: false, code: 500, error: "This is a test error." }, // fetcher.error,
-      errorVisible: false // fetcher.errorVisible
+      errorVisible: true // fetcher.errorVisible
     }
   }
   
@@ -36,6 +36,8 @@ class App extends Component {
   }
 
   render() {
+    let error = this.state.error ? this.state.error.error : null
+    
     return (
       <BrowserRouter>
         <div className="app">
@@ -50,8 +52,8 @@ class App extends Component {
             loggedIn={this.state.loggedIn} 
             token={this.state.token} 
             user={this.state.user} 
-            error={this.state.error} 
-            errorVisible ={this.state.errorVisible}
+            error={error} 
+            errorVisible={this.state.errorVisible}
             handleError={() => this.handleError()} />
         </div>
       </BrowserRouter>

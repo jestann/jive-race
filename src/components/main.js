@@ -22,19 +22,19 @@ class Main extends Component {
     return (
       <div className="main">
         <Switch>
-          <Route exact path="/" component={() => <Home {...props} />} />
-          <Route exact path="/about" component={() => <About {...props} />} />
-          <Route exact path="/register" component={() => <Register {...props} />} />
-          <Route exact path="/currentrace" component={() => <CurrentRace {...props} />} />
-          <Route exact path="/currentteams" component={() => <CurrentTeams {...props} />} />
-          <Route exact path="/contact" component={() => <Contact {...props} />} />
+        <Route exact path="/" render={() => <Home {...this.props} />} />
+          <Route exact path="/about" render={() => <About {...this.props} />} />
+          <Route exact path="/register" render={() => <Register {...this.props} />} />
+          <Route exact path="/currentrace" component={() => <CurrentRace {...this.props} />} />
+          <Route exact path="/currentteams" component={() => <CurrentTeams {...this.props} />} />
+          <Route exact path="/contact" component={() => <Contact {...this.props} />} />
 
-          <Route exact path="/results" component={() => <Results {...props} />} />
+          <Route exact path="/results" component={() => <Results {...this.props} />} />
       
-          <Route exact path="/user" component={() => <User {...props} />} />
-          <Route exact path="/race" component={() => <Race {...props} />} />
-          <Route exact path="/team" component={() => <Team {...props} />} />
-          <Route exact path="/result" component={() => <Result {...props} />} />
+          <Route exact path="/user" component={() => <User {...this.props} />} />
+          <Route exact path="/race" component={() => <Race {...this.props} />} />
+          <Route exact path="/team" component={() => <Team {...this.props} />} />
+          <Route exact path="/result" component={() => <Result {...this.props} />} />
         </Switch>
       </div>
     )

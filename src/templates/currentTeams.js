@@ -35,7 +35,7 @@ class CurrentTeams extends Component {
     let content = <div>{teams}<div className="joined">{joined}</div></div>
     
     return (
-      <Container title="Teams" content={content} cssLabel="teams" />
+      <Container title="Teams" content={content} cssLabel="teams" {...this.props} />
     )
   }
 }

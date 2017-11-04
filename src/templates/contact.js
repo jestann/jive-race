@@ -15,7 +15,7 @@ class Contact extends Component {
     />
     
     return (
-      <Container title="Contact" content={content} cssLabel="contact" />
+      <Container title="Contact" content={content} cssLabel="contact" {...this.props} />
     )
   }
 }

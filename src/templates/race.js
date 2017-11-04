@@ -46,7 +46,7 @@ class Race extends Component {
     )
     
     return (
-      <Container title={title} content={content} cssLabel="race" />
+      <Container title={title} content={content} cssLabel="race" {...this.props} />
     )
   }
 }

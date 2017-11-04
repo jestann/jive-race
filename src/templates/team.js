@@ -34,7 +34,7 @@ class Team extends Component {
     )
     
     return (
-      <Container title={title} content={content} cssLabel="team" />
+      <Container title={title} content={content} cssLabel="team" {...this.props} />
     )
   }
 }

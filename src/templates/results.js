@@ -34,7 +34,7 @@ class Results extends Component {
     )
     
     return (
-      <Container title={title} content={content} cssLabel="results" />
+      <Container title={title} content={content} cssLabel="results" {...this.props} />
     )
   }
 }

@@ -34,7 +34,7 @@ class User extends Component {
     )
     
     return (
-      <Container title={title} content={content} cssLabel="user" />
+      <Container title={title} content={content} cssLabel="user" {...this.props} />
     )
   }
 }

@@ -3,10 +3,11 @@ import './../styles/error.css'
 
 class ErrorBox extends Component {
   render (props) {
-    let errorBoxVisible = this.props.isVisible ? "error-box" : "error-box hidden"
+    let errorBoxVisible = this.props.errorVisible ? "error-box" : "error-box hidden"
+    let error = this.props.error ? this.props.error : ""
     return (
       <div className={errorBoxVisible}>
-        <div className='error-message'>{this.props.error.body}</div>
+        <div className='error-message'>{error}</div>
         <div className='error-close-button' onClick={this.props.handleError}>x</div>
       </div>
     )

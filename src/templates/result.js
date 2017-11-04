@@ -26,7 +26,7 @@ class Result extends Component {
     )
     
     return (
-      <Container title={title} content={content} cssLabel="result" />
+      <Container title={title} content={content} cssLabel="result" {...this.props} />
     )
   }
 }
