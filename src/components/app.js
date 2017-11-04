@@ -11,19 +11,48 @@ class App extends Component {
     super(props)
     let fetcher = new Fetcher()
     this.state = { 
-      token: fetcher.token, 
-      user: fetcher.user, 
-      error: fetcher.error,
-      errorVisible: fetcher.errorVisible
+      loggedIn: false, // fetcher.loggedIn,
+      token: "test token", // fetcher.token, 
+      user: null, // fetcher.user, 
+      error: { success: false, code: 500, error: "This is a test error." }, // fetcher.error,
+      errorVisible: false // fetcher.errorVisible
     }
   }
   
+  signup () {
+    this.setState({ loggedIn: true, user: { name: "New Person" } })
+  }
+  
+  login () {
+    this.setState({ loggedIn: true, user: { name: "Jess" } })
+  }
+  
+  logout () {
+    this.setState({ loggedIn: false, user: null })
+  }
+  
+  handleError () {
+    this.setState({ errorVisible: false })
+  }
+
   render() {
     return (
       <BrowserRouter>
         <div className="app">
-          <Navbar token={this.state.token} user={this.state.user} />
-          <Main token={this.state.token} user={this.state.user} error={this.state.error} errorVisible ={this.state.errorVisible} />
+          <Navbar 
+            loggedIn={this.state.loggedIn} 
+            token={this.state.token} 
+            user={this.state.user} 
+            signup={() => this.signup()}
+            login={() => this.login()}
+            logout={() => this.logout()} />
+          <Main 
+            loggedIn={this.state.loggedIn} 
+            token={this.state.token} 
+            user={this.state.user} 
+            error={this.state.error} 
+            errorVisible ={this.state.errorVisible}
+            handleError={() => this.handleError()} />
         </div>
       </BrowserRouter>
     )

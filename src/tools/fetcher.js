@@ -1,6 +1,7 @@
 class Fetcher { // Singleton class for fetching data from back end
     constructor () {
         this.url = 'https://ide.c9.io/jessann/race-back-end'
+        this.loggedIn = true
         this.token = null
         this.user = null
         this.error = null
@@ -30,12 +31,11 @@ class Fetcher { // Singleton class for fetching data from back end
                 })
             }
             let data = await response.json()
+            if (!data.success) { throw data }
             
             // save if received a token or current user back
             if (data.token) { this.token = data.token }
             if (data.currentUser) { this.user = data.currentUser }
-
-            if (!data.success) { throw data }
             return data // { success: true, code: 200, currentUser: {currentUser}, data: (data), message: "message" }
         } catch (error) { 
             this.errorVisible = true
@@ -49,17 +49,25 @@ class Fetcher { // Singleton class for fetching data from back end
   
     async authRegister (email, username, password) {
         let data = await this.fetchIt('/auth/register', 'POST', undefined, { email: email, username: username, password: password })
+        if (data.success) { this.loggedIn = true }
         return data // { currentUser: {new user}, token: (token), message: "registered" }
     }
   
     async login (username, password) {
         let data = await this.fetchIt('/auth/login', 'PUT', undefined, { username: username, password: password })
+        if (data.success) { this.loggedIn = true }
         return data // { currentUser: {logged in user}, token: (token), message: "logged in" }
     }
   
     async logout () {
+        /*
         let data = await this.fetchIt('/auth/logout', 'PUT')
         return data // { message: "logged out" } -- route under construction, throws an error
+        */
+        this.token = null
+        this.user = null
+        this.loggedIn = false
+        return { success: true, code: 200, message: "Successfully logged out." }
     }
 
 

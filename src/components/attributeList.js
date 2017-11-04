@@ -4,7 +4,7 @@ import Attribute from '/attribute'
 import './../styles/attribute.css'
 
 class AttributeList extends Component {
-  render () {
+  render (props) {
     let items = this.props.items.map((item, i) => (
       <div className="attribute-list-item" key={i}>
         <Attribute />
