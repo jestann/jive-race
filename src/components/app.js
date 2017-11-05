@@ -10,13 +10,22 @@ class App extends Component {
   constructor (props) {
     super(props)
     let fetcher = new Fetcher()
+    
     this.state = { 
+      fetcher: fetcher,
       loggedIn: false, // fetcher.loggedIn,
       token: "test token", // fetcher.token, 
       user: null, // fetcher.user, 
       error: { success: false, code: 500, error: "This is a test error." }, // fetcher.error,
       errorVisible: true // fetcher.errorVisible
     }
+  }
+  
+  async componentWillMount() {
+    let data = await this.state.fetcher.getAuth('result', 'validAttributes')
+    // let data = await this.state.fetcher.userIndex(null)
+    let auth = 'success: ' + data.success + ' | code: ' + data.code + ' | error: ' + data.error
+    this.setState({ error: { error: auth } })
   }
   
   signup () {
@@ -36,7 +45,7 @@ class App extends Component {
   }
 
   render() {
-    let error = this.state.error ? this.state.error.error : null
+    let error = this.state.error ? this.state.error.error : null // consider using an empty string here
     
     return (
       <BrowserRouter>
