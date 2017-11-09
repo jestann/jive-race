@@ -1,21 +1,27 @@
 import React, { Component } from 'react'
 import Container from './../components/container'
 import Form from './../components/form'
+import Fetcher from './../tools/fetcher'
 import './../styles/main.css'
 
 class Signup extends Component {
   constructor (props) {
     super(props)
-    this.state = { values: 'no values yet' }
+    let fetcher = new Fetcher()
+    this.state = { 
+      submission: 'no submission yet',
+      fetcher: fetcher
+    }
     this.signup = this.signup.bind(this)
   }
 
-  signup (values) {
-    this.setState({ values: values })
+  signup (labelsArray, valuesArray) {
+    let submission = labelsArray.map((label, i) => (<div>{label}: {valuesArray[i]}</div>))
+    this.setState({ submission: submission })
   }
   
   render () {
-    let content = <Form 
+    let form = <Form 
       heading="Sign up to join the Race App" 
       body="Enter your email address. Then choose a username and password below."
       formboxes={[
@@ -23,11 +29,13 @@ class Signup extends Component {
         { label: "username", type: "text", placeholder: "username" },
         { label: "password", type: "password", placeholder: "" }
       ]}
-      submit={this.signup}
+      handleSubmit={this.signup}
     />
     
+    let content = <div>{form}submission: {this.state.submission}</div>
+    
     return (
-      <Container title="Signup" content={content} cssLabel="signup" error={this.state.values} {...this.props} />
+      <Container title="Signup" content={content} cssLabel="signup" {...this.props} />
     )
   }
 }

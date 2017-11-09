@@ -17,10 +17,13 @@ class Form extends Component {
     valuesArray.push({ label: eventObj.label, value: eventObj.value })
     this.setState({ submitted: false, values: valuesArray })
   }
-      
+  
+  // sends a labels array and a values array up the line
   handleSubmit () {
     this.setState({ submitted: true })
-    this.props.submit(this.state.values)
+    let labelsArray = this.state.values.map((valueObj) => valueObj.label)
+    let valuesArray = this.state.values.map((valueObj) => valueObj.value)
+    this.props.handleSubmit(labelsArray, valuesArray)
   }
     
   render (props) {
