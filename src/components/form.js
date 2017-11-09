@@ -7,32 +7,34 @@ class Form extends Component {
   constructor (props) {
     super(props)
     this.state = { submitted: false, values: [] }
-    
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   
+  // handles continuously updating the entered data
   handleInputChange (eventObj) {
     let valuesArray = this.state.values.filter((value) => value.label !== eventObj.label )
     valuesArray.push({ label: eventObj.label, value: eventObj.value })
     this.setState({ submitted: false, values: valuesArray })
   }
   
-  // sends a labels array and a values array up the line
-  handleSubmit () {
+  // sends a labels array and a values array up the parent handleSubmit function
+  async handleSubmit () {
     this.setState({ submitted: true })
     let labelsArray = this.state.values.map((valueObj) => valueObj.label)
     let valuesArray = this.state.values.map((valueObj) => valueObj.value)
-    this.props.handleSubmit(labelsArray, valuesArray)
+    await this.props.handleSubmit(labelsArray, valuesArray)
   }
     
   render (props) {
-    let formboxes = this.props.formboxes.map((formbox) => (
-      <FormBox label={formbox.label} type={formbox.type} placeholder={formbox.placeholder} key={formbox.label} onChange={this.handleInputChange} />
+    // displays the inputs for entering data
+    let formboxes = this.props.formboxes.map((formbox, i) => (
+      <FormBox label={formbox.label} type={formbox.type} placeholder={formbox.placeholder} key={i} onChange={this.handleInputChange} />
     ))
     
-    let returnFormData = this.state.values.map((obj) => (
-      <div>{obj.label}: {obj.value}</div>
+    // displays the submitted data
+    let returnFormData = this.state.values.map((obj, i) => (
+      <div className='return-form-item' key={i}>{obj.label}: {obj.value}</div>
     ))
     let returnForm = this.state.submitted ? returnFormData : ''
 
@@ -44,7 +46,10 @@ class Form extends Component {
           {formboxes}
         </div>
         <Button cssLabel="submit" label="Submit" onClick={this.handleSubmit} />
-        <div className='return-form'>{returnForm}</div>
+        <div className='return-form'>
+          <div className='return-form-header'>The following values were submitted.</div>
+          {returnForm}
+        </div>
       </div>
     )
   }
