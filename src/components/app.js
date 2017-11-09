@@ -21,10 +21,9 @@ class App extends Component {
     }
   }
   
-  async componentWillMount() {
+  async componentDidMount() {
     let data = await this.state.fetcher.getAuth('result', 'validAttributes')
-    // let data = await this.state.fetcher.userIndex(null)
-    let auth = 'success: ' + data.success + ' | code: ' + data.code + ' | error: ' + data.error
+    let auth = 'success: ' + data.success + ' | code: ' + data.code + ' | auth: ' + data.auth
     this.setState({ error: { error: auth } })
   }
   
