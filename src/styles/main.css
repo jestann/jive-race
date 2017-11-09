@@ -48,6 +48,32 @@ body {
   color: #222;
 }
 
+.show {
+  margin: 40px;
+}
+
+.show-button {
+  margin-top: 50px; /* something not working here */
+  margin-right: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ddd;
+  color: #666;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.show-button:hover {
+  background-color: #666;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
 
 /* Button styling */
 

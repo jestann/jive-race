@@ -1,17 +1,25 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import Attribute from '/attribute'
+import Attribute from './attribute'
 import './../styles/attribute.css'
 
 class AttributeList extends Component {
-  render (props) {
-    let items = this.props.items.map((item, i) => (
-      <div className="attribute-list-item" key={i}>
-        <Attribute />
-      </div>
+  render () {
+    let items = this.props.items.map((item, i) => ( 
+      <Attribute 
+        keyed={i}
+        content={item.content} // label not used in a list
+        link={item.link}
+        postlink={item.postlink}
+        long={item.long}
+      /> 
     ))
     
-    return ( <div className='attribute-list'>{items}</div> )
+    return ( 
+      <div className='attribute'>
+        <div className='attribute-list-header'>{this.props.header}</div>
+        <div className='attribute-list'>{items}</div>
+      </div>
+    )
   }
 }
 

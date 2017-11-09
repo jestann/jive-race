@@ -8,7 +8,8 @@ class Contact extends Component {
     let content = <Form 
       heading="Contact Us" 
       body="Have something you want to say? We're here to listen."
-      formboxes={[{ label: "name", type: "text", placeholder: "name" },
+      formboxes={[
+        { label: "name", type: "text", placeholder: "name" },
         { label: "email", type: "text", placeholder: "email" },
         { label: "body", type: "textarea", placeholder: "Let us know what you're thinking." }, 
       ]}

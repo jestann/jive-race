@@ -9,6 +9,11 @@ import CurrentRace from './../templates/currentRace'
 import CurrentTeams from './../templates/currentTeams'
 import Contact from './../templates/contact'
 
+import Signup from './../templates/signup'
+import Login from './../templates/login'
+
+import Edit from './../templates/edit'
+
 import Results from './../templates/results'
 
 import User from './../templates/user'
@@ -28,6 +33,11 @@ class Main extends Component {
           <Route exact path="/currentrace" component={() => <CurrentRace {...this.props} />} />
           <Route exact path="/currentteams" component={() => <CurrentTeams {...this.props} />} />
           <Route exact path="/contact" component={() => <Contact {...this.props} />} />
+          
+          <Route exact path="/signup" component={() => <Signup {...this.props} />} />
+          <Route exact path="/login" component={() => <Login {...this.props} />} />
+
+          <Route exact path="/edit" component={() => <Edit {...this.props} />} />
 
           <Route exact path="/results" component={() => <Results {...this.props} />} />
       

@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+
 import Container from './../components/container'
+import AttributeList from './../components/attributeList'
+import Attribute from './../components/attribute'
+
 import './../styles/main.css'
 
 class Race extends Component {
   constructor (props) {
     super(props)
     this.state = { 
+      editCss: '', // or ' hidden'
+      deleteCss: '',
       name: "Super Cool Race", 
       year: "2018",
       body: "This is the best race.", 
@@ -24,27 +30,31 @@ class Race extends Component {
     }
   }
   
+  handleDelete () {
+    // confirm if delete the race
+  }
+  
   render () {
     let title = 'Race: ' + this.state.name
-    let teams = this.state.teams.map((team, i) => (<div className="body-list-item" key={i}><Link to="/team">{team.name}</Link> | {team.body}</div>))
-    let runners = this.state.runners.map((runner, i) => (<div className="body-list-item" key={i}><Link to="/user">{runner.name}</Link>, age {runner.age}</div>))
+    let teamsList = this.state.teams.map((team) => ({ content: team.name, link: "/team", postlink: (' | ' + team.body), long: false }))
+    let runnersList = this.state.runners.map((runner) => ({ content: runner.name, link: "/user", postlink: (', age ' + runner.age), long: false }))
+    
+    let editCss = 'show-button' + this.state.editCss
+    let deleteCss = 'show-button' + this.state.deleteCss
+    
     let content = (
-      <div className='info'>
-        <div className='body'>Year: {this.state.year}</div>
-        <div className='body'>Date: {this.state.date}</div>
-        <div className='body'>Description: {this.state.body}</div>
-        <div className='body'>
-            <div className='body-header'>Teams</div>
-            <div className='body-list'>{teams}</div>
-        </div>
-        <div className='body'>
-            <div className='body-header'>Runners</div>
-            <div className='body-list'>{runners}</div>
-        </div>
-        <div className='body-link'><Link to="/results">Results</Link></div>
+      <div className='show'>
+        <Attribute label='Year' content={this.state.year} long={false} />
+        <Attribute label='Date' content={this.state.date} long={false} />
+        <Attribute label='Why?' content={this.state.body} long={true} />
+        <AttributeList header='Teams' items={teamsList} />
+        <AttributeList header='Runners' items={runnersList} />
+        <Attribute label='' content='Results' link='/results' long={false} />
+        <Link className={editCss} to='/edit'>Edit Race</Link>
+        <Link className={deleteCss} to='/' onClick={this.handleDelete}>Delete Race</Link>
       </div>
     )
-    
+
     return (
       <Container title={title} content={content} cssLabel="race" {...this.props} />
     )

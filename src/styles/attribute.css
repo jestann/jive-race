@@ -1,21 +1,48 @@
 /* show model attribute styling */
 
 .attribute {
-  
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 75%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ddd;
+  color: #666;
+  font-family: sans-serif;
 }
 
-.attribute-header {
-  
+.attribute-label {
+  padding: 0px;
 }
 
-.attribute-list {
-  
+.attribute-short {
+  padding: 0px;
 }
 
-.attribute-list-item {
-  
+.attribute-long {
+  padding: 0px;
 }
 
 .attribute-link {
-  
+  color: #666;
+  font-weight: bold;
+  text-decoration: none;
 }
+
+.attribute-link:hover {
+  color: black;
+}
+
+.attribute-list-header {
+  padding: 0px;
+}
+
+.attribute-list {
+  padding: 0px;
+}
+
+.attribute-list-item {
+  padding: 0px;
+}
+

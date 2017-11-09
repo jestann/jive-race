@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import Container from './../components/container'
+import AttributeList from './../components/attributeList'
+import Attribute from './../components/attribute'
+
 import './../styles/main.css'
 
 class Results extends Component {
@@ -19,20 +21,16 @@ class Results extends Component {
   
   render () {
     let title = 'Results for Team ' + this.state.team
-    let results = this.state.results.map((result, i) => (<div className='body-list-item' key={i}><Link to="/user">{result.runner}</Link>: <Link to="/result">{result.time}</Link></div>))
+    let resultsList = this.state.results.map((result) => ({ content: (result.runner + ': ' + result.time), link: "/result", long: false }))
+
     let content = (
-      <div className='info'>
-        <div className='body'>Race: <Link to="/race">{this.state.race}</Link></div>
-        <div className='body'>
-          <div className='body-header'>Results</div>
-          <div className='body-list'>
-            {results}
-          </div>
-        </div>
-        <div className='body-link'><Link to="/team">Back to Team</Link></div>
+      <div className='show'>
+        <Attribute label='Race' content={this.state.race} link='/race' long={false} />
+        <AttributeList header='Results' items={resultsList} />
+        <Attribute label='' content='Back to Team' link='/team' long={false} />
       </div>
     )
-    
+
     return (
       <Container title={title} content={content} cssLabel="results" {...this.props} />
     )

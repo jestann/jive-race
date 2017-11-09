@@ -4,27 +4,46 @@ import './../styles/attribute.css'
 
 class Attribute extends Component {
   render () {
-    let attribute = null
-    if (this.props.link) {
-        attribute = "happy"
-    }
+    // could include props: label, content, link, postlink, key (for a list), long (boolean),
+    let postlink = this.props.postlink ? this.props.postlink : ''
+    let mainCssLabel = 'no-style'
+    let attributeLabel = ''
+    let attribute = ''
+
+    // attribute list item
+    if (this.props.keyed >= 0) {
+      attribute = <div className='attribute-list-item' key={this.props.keyed}>
+        <Link className='attribute-link' to={this.props.link}>{this.props.content}</Link>
+        {postlink}
+      </div>
+    } 
     
+    // regular attribute
+    else {
+      mainCssLabel = 'attribute'
+      attributeLabel = <div className='attribute-label'>{this.props.label}</div>
+      let cssLabel = 'attribute' + (this.props.long ? '-long' : '-short')
+
+      if (this.props.link) { 
+        attribute = <div className={cssLabel}>
+          <Link className='attribute-link' to={this.props.link}>{this.props.content}</Link>
+          {postlink}
+        </div> 
+      } else { 
+        attribute = <div className={cssLabel}>
+          {this.props.content}
+          {postlink}
+        </div>
+      }
+    }
+
     return (
-      <div className="attribute">
+      <div className={mainCssLabel}>
+        {attributeLabel}
+        {attribute}
       </div>
     )
   }
 }
 
 export default Attribute
-
-/*
-        <div className="body-list-item" key={i}><Link to="/race">{race.name}</Link> in {race.year}</div>
-        <div className='body'>Bio: {this.state.bio}</div>
-          <div className='body'>Team: <Link to="/team">{this.state.team}</Link></div>
-          <div className='body'>
-            <div className='body-header'>Races</div>
-            <div className='body-list'>{races}</div>
-          </div>
-          <div className='body-link'><Link to="/results">Results</Link></div>
-*/

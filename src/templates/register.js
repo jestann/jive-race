@@ -8,7 +8,8 @@ class Register extends Component {
     let content = <Form 
       heading="Registration" 
       body="Fill in your data below to register for this year's race."
-      formboxes={[{ label: "name", type: "text", placeholder: "name" },
+      formboxes={[
+        { label: "name", type: "text", placeholder: "name" },
         { label: "bio", type: "textarea", placeholder: "Talk about yourself here." }, 
         { label: "age", type: "text", placeholder: "age" }
       ]}

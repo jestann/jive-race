@@ -13,7 +13,7 @@ class FormBox extends Component {
     this.props.onChange({ label: this.props.label, value: event.target.value })
   }
   
-  render (props) {
+  render () {
     let cssLabel = 'input ' + this.props.type
     
     let inputBox = ''
