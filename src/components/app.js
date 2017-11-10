@@ -10,59 +10,76 @@ class App extends Component {
   constructor (props) {
     super(props)
     let fetcher = new Fetcher()
-    
     this.state = { 
       fetcher: fetcher,
-      loggedIn: false, // fetcher.loggedIn,
-      token: "test token", // fetcher.token, 
-      user: null, // fetcher.user, 
-      error: { success: false, code: 500, error: "This is a test error." }, // fetcher.error,
-      errorVisible: true // fetcher.errorVisible
+      loggedIn: fetcher.loggedIn,
+      token: fetcher.token,
+      user: fetcher.user,
+      dat: fetcher.data,
+      isError: fetcher.isError,
+      message: fetcher.message,
+      messageVisible: fetcher.messageVisible
     }
+    this.signup = this.signup.bind(this)
+    this.login = this.login.bind(this)
+    this.logout = this.logout.bind(this)
+    this.sendMessage = this.sendMessage.bind(this)
+    this.handleMessage = this.handleMessage.bind(this)
+  }
+
+  signup (user=this.state.fetcher.user) {
+    this.setState({ loggedIn: true, user: user })
+    let usernameText = user ? ' as ' + user.username + '.' : '.'
+    this.sendMessage('Logged in successfully' + usernameText)
   }
   
-  async componentDidMount() {
-    let data = await this.state.fetcher.getAuth('result', 'validAttributes')
-    let auth = 'success: ' + data.success + ' | code: ' + data.code + ' | auth: ' + data.auth
-    this.setState({ error: { error: auth } })
-  }
-  
-  signup () {
-    this.setState({ loggedIn: true, user: { name: "New Person" } })
-  }
-  
-  login () {
-    this.setState({ loggedIn: true, user: { name: "Jess" } })
+  login (user=this.state.fetcher.user) {
+    this.setState({ loggedIn: true, user: user })
+    let usernameText = user ? ' as ' + user.name + '.' : '.'
+    this.sendMessage('Logged in successfully' + usernameText)
   }
   
   logout () {
     this.setState({ loggedIn: false, user: null })
+    this.sendMessage('Logged out successfully.')
   }
   
-  handleError () {
-    this.setState({ errorVisible: false })
+  sendMessage (message, isError=false) {
+    this.setState({ message: message, messageVisible: true, isError: isError})
+  }
+  
+  handleMessage () {
+    this.setState({ messageVisible: false })
   }
 
   render() {
-    let error = this.state.error ? this.state.error.error : null // consider using an empty string here
-    
     return (
       <BrowserRouter>
         <div className="app">
           <Navbar 
+            fetcher={this.state.fetcher}
             loggedIn={this.state.loggedIn} 
             token={this.state.token} 
             user={this.state.user} 
-            signup={() => this.signup()}
-            login={() => this.login()}
-            logout={() => this.logout()} />
+            signup={this.signup}
+            login={this.login}
+            logout={this.logout} 
+          />
           <Main 
+            fetcher={this.state.fetcher}
             loggedIn={this.state.loggedIn} 
             token={this.state.token} 
             user={this.state.user} 
-            error={error} 
-            errorVisible={this.state.errorVisible}
-            handleError={() => this.handleError()} />
+            data={this.state.data}
+            message={this.state.message} 
+            messageVisible={this.state.messageVisible}
+            isError={this.state.isError}
+            handleMessage={this.handleMessage}
+            sendMessage={this.sendMessage}
+            signup={this.signup}
+            login={this.login}
+            logout={this.logout}
+          />
         </div>
       </BrowserRouter>
     )

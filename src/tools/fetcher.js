@@ -4,13 +4,15 @@ class Fetcher { // Singleton class for fetching data from back end
         this.loggedIn = true
         this.token = null
         this.user = null
-        this.error = null
-        this.errorVisible = false
+        this.isError = false
+        this.message = null
+        this.messageVisible = false
+        this.data = null
     }
     
     // error maker function
     makeErr (error) {
-        return { success: false, code: error.code || 500, error: error.error || error }
+        return { success: false, code: error.code || 500, message: error.error || error }
     }
     
     // universal fetch method
@@ -36,11 +38,20 @@ class Fetcher { // Singleton class for fetching data from back end
             // save if received a token or current user back
             if (data.token) { this.token = data.token }
             if (data.currentUser) { this.user = data.currentUser }
+            if (data.message) { 
+                this.message = data.message
+                this.messageVisible = true
+            }
+            this.isError = false
+            this.data = data
             return data // { success: true, code: 200, currentUser: {currentUser}, data: (data), message: "message" }
             
         } catch (error) { 
-            this.errorVisible = true
-            return this.error = this.makeErr(error) // { success: false, code: (code), error: "error" }
+            this.data = this.makeErr(error)
+            this.message = error.message
+            this.messageVisible = true
+            this.isError = true
+            return this.data // { success: false, code: (code), message: "error" }
         }
     }
 
@@ -65,10 +76,14 @@ class Fetcher { // Singleton class for fetching data from back end
         let data = await this.fetchIt('/auth/logout', 'PUT')
         return data // { message: "logged out" } -- route under construction, throws an error
         */
+        this.data = { success: true, code: 200, message: "Successfully logged out." }
         this.token = null
         this.user = null
         this.loggedIn = false
-        return { success: true, code: 200, message: "Successfully logged out." }
+        this.message = this.data.message
+        this.messageVisible = true
+        this.isError = false
+        return this.data
     }
 
 

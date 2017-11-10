@@ -23,7 +23,7 @@ import Result from './../templates/result'
 
 
 class Main extends Component {
-  render (props) {
+  render () {
     return (
       <div className="main">
         <Switch>

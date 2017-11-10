@@ -8,7 +8,7 @@ class Greeting extends Component {
     let loginImg = { alt: "lock", src: "https://png.icons8.com/lock/color/24" }
     let logoutImg = { alt: "unlock", src: "https://png.icons8.com/unlock/color/24" }
     
-    if (this.props.loggedIn) {
+    if (this.props.loggedIn && this.props.user) {
       return (
         <div className="greeting">
           <span className="greeting-text">Welcome, {this.props.user.name}.</span>
@@ -19,8 +19,8 @@ class Greeting extends Component {
       return (
         <div className="greeting">
           <span className="greeting-text">Welcome, Guest.</span>
-          <Button label="Log In" src={loginImg.src} alt={loginImg.alt} cssLabel="login hover-bold" onClick={this.props.login} />
-          <Button label="Sign Up" src={signupImg.src} alt={signupImg.alt} cssLabel="signup hover-bold" onClick={this.props.signup} />
+          <Button label="Log In" src={loginImg.src} alt={loginImg.alt} cssLabel="login hover-bold" link="/login" onClick={() => 'empty'} />
+          <Button label="Sign Up" src={signupImg.src} alt={signupImg.alt} cssLabel="signup hover-bold" link="/signup" onClick={() => 'empty'} />
         </div>
       )
     }

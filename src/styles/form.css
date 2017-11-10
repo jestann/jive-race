@@ -38,18 +38,9 @@
 }
 
 .return-form {
-  width: 75%;
-  padding: 10px;
   margin-top: 80px;
-  border-radius: 5px;
-  background-color: #b9dffa;
-  color: #0492fa;
 }
 
 .return-form-header {
   font-weight: bold;
-}
-
-.return-form-item {
-  padding: 10px;
 }

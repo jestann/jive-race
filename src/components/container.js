@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Markdown from 'react-markdown'
 
 import Title from './../components/title'
-import ErrorBox from './../components/errorBox'
+import MessageBox from './../components/messageBox'
 import './../styles/main.css'
 
 class Container extends Component {
@@ -13,7 +13,7 @@ class Container extends Component {
       <div className='container'>
         <Title title={this.props.title} />
         <div className={cssLabel}>
-          <ErrorBox error={this.props.error} errorVisible={this.props.errorVisible} handleError={this.props.handleError} />
+          <MessageBox {...this.props} />
           <div className='container-body'>
             {content} 
           </div>

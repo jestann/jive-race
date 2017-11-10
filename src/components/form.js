@@ -25,7 +25,7 @@ class Form extends Component {
     let valuesArray = this.state.values.map((valueObj) => valueObj.value)
     await this.props.handleSubmit(labelsArray, valuesArray)
   }
-    
+
   render (props) {
     // displays the inputs for entering data
     let formboxes = this.props.formboxes.map((formbox, i) => (
@@ -33,6 +33,7 @@ class Form extends Component {
     ))
     
     // displays the submitted data
+    let returnFormHeader = this.state.submitted ? <div className='return-form-header'>The following values were submitted.</div> : ''
     let returnFormData = this.state.values.map((obj, i) => (
       <div className='return-form-item' key={i}>{obj.label}: {obj.value}</div>
     ))
@@ -47,7 +48,7 @@ class Form extends Component {
         </div>
         <Button cssLabel="submit" label="Submit" onClick={this.handleSubmit} />
         <div className='return-form'>
-          <div className='return-form-header'>The following values were submitted.</div>
+          {returnFormHeader}
           {returnForm}
         </div>
       </div>
