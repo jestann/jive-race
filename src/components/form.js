@@ -6,7 +6,7 @@ import Button from './button'
 class Form extends Component {
   constructor (props) {
     super(props)
-    this.state = { submitted: false, values: [] }
+    this.state = { values: [] }
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }

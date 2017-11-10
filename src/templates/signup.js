@@ -10,10 +10,16 @@ class Signup extends Component {
   }
 
   async signup (labelsArray, valuesArray) {
-    let submission = {}
-    labelsArray.forEach((label, i) => { submission[label] = valuesArray[i] })
-    let data = await this.props.fetcher.authRegister(submission.email, submission.username, submission.password)
-    if (data.message) { this.props.sendMessage(data.message, !data.success) }
+    if (labelsArray && valuesArray) {
+      let submission = {}
+      labelsArray.forEach((label, i) => { submission[label] = valuesArray[i] })
+      let data = await this.props.fetcher.authRegister(submission.email, submission.username, submission.password)
+      if (!data.success) { this.props.sendMessage(data.message, !data.success) }
+      else if (data.success) { 
+        this.sendMessage('Logged in successfully as ' + data.currentUser.username + '.')
+        this.props.signup(data.currentUser, data.token)
+      }
+    }
   }
   
   render () {

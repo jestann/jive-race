@@ -27,21 +27,23 @@ class App extends Component {
     this.handleMessage = this.handleMessage.bind(this)
   }
 
-  signup (user=this.state.fetcher.user) {
-    this.setState({ loggedIn: true, user: user })
-    let usernameText = user ? ' as ' + user.username + '.' : '.'
-    this.sendMessage('Logged in successfully' + usernameText)
+  signup (user=this.state.fetcher.user, token=this.state.fetcher.token) {
+    this.setState({ loggedIn: true, user: user, token: token })
   }
   
-  login (user=this.state.fetcher.user) {
-    this.setState({ loggedIn: true, user: user })
-    let usernameText = user ? ' as ' + user.name + '.' : '.'
-    this.sendMessage('Logged in successfully' + usernameText)
+  login (user=this.state.fetcher.user, token=this.state.fetcher.token) {
+    this.setState({ loggedIn: true, user: user, token: token })
   }
   
-  logout () {
-    this.setState({ loggedIn: false, user: null })
-    this.sendMessage('Logged out successfully.')
+  async logout () {
+    let data = await this.state.fetcher.logout()
+    if (!data.success) { 
+      this.sendMessage(data.message, true) 
+    }
+    else if (data.success) {
+      this.setState({ loggedIn: false, user: null, token: null })
+      this.sendMessage(data.message)
+    }
   }
   
   sendMessage (message, isError=false) {
