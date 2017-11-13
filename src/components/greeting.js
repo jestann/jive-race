@@ -11,7 +11,7 @@ class Greeting extends Component {
     if (this.props.loggedIn && this.props.user) {
       return (
         <div className="greeting">
-          <span className="greeting-text">Welcome, {this.props.user.name}.</span>
+          <span className="greeting-text">Welcome, {this.props.user.username}.</span>
           <Button label="Log Out" src={logoutImg.src} alt={logoutImg.alt} cssLabel="logout hover-bold" onClick={this.props.logout} />
         </div>
       )

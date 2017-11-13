@@ -14,9 +14,10 @@ class Signup extends Component {
       let submission = {}
       labelsArray.forEach((label, i) => { submission[label] = valuesArray[i] })
       let data = await this.props.fetcher.authRegister(submission.email, submission.username, submission.password)
+      console.log(data)
       if (!data.success) { this.props.sendMessage(data.message, !data.success) }
       else if (data.success) { 
-        this.sendMessage('Logged in successfully as ' + data.currentUser.username + '.')
+        this.props.sendMessage('Logged in successfully as ' + data.currentUser.username + '.')
         this.props.signup(data.currentUser, data.token)
       }
     }
@@ -34,7 +35,7 @@ class Signup extends Component {
       handleSubmit={this.signup}
     />
     return (
-      <Container title="Signup" content={content} cssLabel="signup" {...this.props} />
+      <Container title="Sign Up" content={content} cssLabel="signup" {...this.props} />
     )
   }
 }

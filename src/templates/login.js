@@ -16,7 +16,7 @@ class Login extends Component {
       let data = await this.props.fetcher.login(submission.username, submission.password)
       if (!data.success) { this.props.sendMessage(data.message, !data.success) }
       else if (data.success) { 
-        this.sendMessage('Logged in successfully as ' + data.currentUser.username + '.')
+        this.props.sendMessage('Logged in successfully as ' + data.currentUser.username + '.')
         this.props.login(data.currentUser, data.token)
       }
     }
@@ -34,7 +34,7 @@ class Login extends Component {
     />
     
     return (
-      <Container title="Login" content={content} cssLabel="login" {...this.props} />
+      <Container title="Log In" content={content} cssLabel="login" {...this.props} />
     )
   }
 }
