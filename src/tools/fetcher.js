@@ -1,6 +1,6 @@
 class Fetcher { // Singleton class for fetching data from back end
     constructor () {
-        this.url = 'https://jess-race-api.herokuapp.com'
+        this.url = 'https://jive-race-api.herokuapp.com'
         this.loggedIn = true
         this.token = null
         this.user = null
