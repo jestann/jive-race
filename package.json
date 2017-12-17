@@ -1,7 +1,17 @@
 {
-  "name": "race-front-end",
+  "name": "jive-race",
+  "author": "jestann",
+  "description": "Team-building race app built on React",
+  "engines": {
+    "node": "8.7.0",
+    "npm": "5.4.2"
+  },
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jestann/jive-race.git"
+  },
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
