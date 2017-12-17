@@ -3,8 +3,9 @@
 # zipped build files for deployment
 jess-race-app.zip
 
-# dependencies
+# development
 /node_modules
+.eslintrc
 
 # testing
 /coverage
