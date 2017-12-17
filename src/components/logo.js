@@ -11,7 +11,7 @@ class Logo extends Component {
       <div className="logo">
         <img src={logo} className="logo-image" alt="logo" />
         <div className="logo-text">
-          <Link className="logo-title" to="/">The Race</Link>
+          <Link className="logo-title" to="/">Jive Race</Link>
           <Greeting {...this.props} />
         </div>
       </div>

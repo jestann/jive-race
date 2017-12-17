@@ -24,7 +24,7 @@ class Login extends Component {
   
   render () {
     let content = <Form 
-      heading="Log in to the Race App" 
+      heading="Log in to Jive Race" 
       body="Enter your user credentials below."
       formboxes={[
         { label: "username", type: "text", placeholder: "username" },

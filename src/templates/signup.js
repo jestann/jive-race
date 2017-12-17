@@ -25,7 +25,7 @@ class Signup extends Component {
   
   render () {
     let content = <Form 
-      heading="Sign up to join the Race App" 
+      heading="Sign up to join Jive Race" 
       body="Enter your email address. Then choose a username and password below."
       formboxes={[
         { label: "email", type: "text", placeholder: "email" },
