@@ -2,9 +2,9 @@
 
 Jive Race is a team-building race application. Users can register for races and create and build teams of runners.
 
-**Note:** This app is still in development and preliminary testing.
+**Note:** This app is still in development.
 
-#### Build Frameworks
+### Build Frameworks
 
 This project is built on [React](https://reactjs.org/) with [React Router 4](https://www.npmjs.com/package/react-router-dom), hosted on [AWS S3](https://aws.amazon.com/s3/). It was initialized from [create-react-app](https://github.com/facebookincubator/create-react-app).
 
@@ -74,7 +74,7 @@ This app has the following file structure.
 └── README.md
 ```
 
-### Future Development
+### Currently in Development
 
 This app is still in development. These are the current development objectives.
 
@@ -84,7 +84,7 @@ This app is still in development. These are the current development objectives.
 - Integrate team membership functionality with API.
 - Add markdown rendering for static content.
 
-The basic component building and design functionality has been built.
+The basic visual components and design functionality have been custom built and integration with the API is in progress.
 
 ### Implementation
 
