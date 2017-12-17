@@ -1,7 +1,7 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # zipped build files for deployment
-jess-race-app.zip
+jive-deployment.zip
 
 # development
 /node_modules
