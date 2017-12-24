@@ -1,7 +1,7 @@
 /* General styling */
 
 body {
-  background-color: #666; /* shows at the bottom */
+  background-color: white; /* shows at the bottom */
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -15,7 +15,7 @@ body {
 /* Template Container styling */
 
 .container {
-  background-color: #ddd;
+  background-color: white;
   position: absolute;
   top: 80px;
   bottom: 0px;
@@ -24,7 +24,7 @@ body {
 }
 
 .hero { /* needs to be made responsive */
-  background-color: #fff;
+  background-color: white;
   position: absolute;
   min-height: 90%;
   left: 22%;
