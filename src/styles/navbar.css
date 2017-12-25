@@ -1,7 +1,14 @@
-.navbar {
+.navbar-mine {
   background-color: #333;
   height: 80px;
   z-index: 100;
+}
+
+@font-face {
+  font-family: 'Variane';
+  src: url('../assets/fonts/variane.woff2') format('woff2'),
+       url('../assets/fonts/variane.woff') format('woff'),
+       url('../assets/fonts/variane.ttf') format('truetype');
 }
 
 /* Left side Logo */
@@ -21,27 +28,42 @@
   padding-top: 15px;
   padding-bottom: 15px;
   color: white;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 25px;
+  font-family: 'Variane', sans-serif;
+  font-size: 3rem;
 }
 
 .logo-title:hover {
   color: #ddd;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logo-title:hover .logo-image {
+  opacity: .6;
+  cursor: pointer;
 }
 
 .logo-image {
+  /* #15E3EB shoe */
   float: left;
-  width: 60px;
-  margin-top: 20px;
-  animation: logo-image-spin infinite 20s linear;
+  width: 80px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 15px;
 }
 
+.logo-image:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+/* 
+animation: logo-image-spin infinite 20s linear;
 @keyframes logo-image-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
+*/
 
 /* Left side Greeting and Login Buttons */
 
@@ -55,20 +77,20 @@
   margin-top: 0px;
 }
 
-.navbar .button { /* Additional button styling in main.css */
+.navbar-mine .button { /* Additional button styling in main.css */
   float: right;
   margin-left: 10px;
   padding-left: 2px;
   padding-right: 2px;
 }
 
-.navbar .button-label {
+.navbar-mine .button-label {
   float: left;
   margin-left: 5px;
   margin-right: 2px;
 }
 
-.navbar .button-image {
+.navbar-mine .button-image {
   float: left;
   margin-bottom: 5px;
 }

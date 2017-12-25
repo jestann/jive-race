@@ -4,10 +4,12 @@ import './../styles/navbar.css'
 import Logo from './logo'
 import Navlink from './navlink'
 
+// make this collapse for mobile
+
 class Navbar extends Component {
   render () {
     return (
-      <div className="navbar">
+      <div className="navbar-mine">
         <Logo {...this.props} />
         <Navlink to="/contact" label="Contact" />
         <Navlink to="/currentteams" label="Teams" />
