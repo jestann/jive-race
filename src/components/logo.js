@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Greeting from './greeting'
 import './../styles/navbar.css'
 
-import logo from './../assets/logo.svg'
+import logo from './../assets/running-team.png'
 
 class Logo extends Component {
   render () {

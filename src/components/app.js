@@ -5,6 +5,7 @@ import './../styles/main.css'
 import Fetcher from './../tools/fetcher'
 import Navbar from './navbar'
 import Main from './main'
+import Footer from './footer'
 
 class App extends Component {
   constructor (props) {
@@ -82,6 +83,7 @@ class App extends Component {
             login={this.login}
             logout={this.logout}
           />
+          <Footer />
         </div>
       </BrowserRouter>
     )

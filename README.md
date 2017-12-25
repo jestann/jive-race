@@ -84,8 +84,4 @@ This app is still in development. These are the current development objectives.
 - Integrate team membership functionality with API.
 - Add markdown rendering for static content.
 
-The basic visual components and design functionality have been custom built and integration with the API is in progress.
-
-### Implementation
-
-Currently the most recent deployment of a test version of this app exists [here](http://d1kx43myw71amx.cloudfront.net/).
+The basic visual components and design functionality have been built and integration with the API is in progress.

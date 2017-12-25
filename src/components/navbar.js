@@ -9,7 +9,7 @@ import Navlink from './navlink'
 class Navbar extends Component {
   render () {
     return (
-      <div className="navbar">
+      <div className="navbar-mine">
         <Logo {...this.props} />
         <Navlink to="/contact" label="Contact" />
         <Navlink to="/currentteams" label="Teams" />
