@@ -1,5 +1,8 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
+# generated css files from sass
+# /src/styles/*.css
+
 # zipped build files for deployment
 jive-deployment.zip
 

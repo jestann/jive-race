@@ -1,0 +1,98 @@
+/* Main Page Navbar */
+
+.navbar-default {
+    border-color: transparent;
+    background-color: #222;
+}
+
+.navbar-default {
+    .navbar-brand {
+        font-family: $font-family-cursive;
+        color: #fff;
+    }
+    
+    .navbar-brand:hover,
+    .navbar-brand:focus,
+    .navbar-brand:active,
+    .navbar-brand.active {
+        color: $secondary;
+    }
+    
+    .navbar-collapse {
+        border-color: rgba(255,255,255,.02);
+    }
+    
+    .navbar-toggle {
+        border-color: $primary;
+        background-color: $primary;
+    }
+    
+    .navbar-toggle .icon-bar {
+        background-color: #fff;
+    }
+    
+    .navbar-toggle:hover,
+    .navbar-toggle:focus {
+        background-color: $primary;
+    }
+    
+    .nav li a {
+        text-transform: uppercase;
+        font-family: $font-family-primary;
+        font-weight: 400;
+        letter-spacing: 1px;
+        color: #fff;
+        -webkit-transition: all ease .35s;
+        -moz-transition: all ease .35s;
+        transition: all ease .35s;
+    }
+    
+    .nav li a:hover,
+    .nav li a:focus {
+        outline: 0;
+        color: $primary;
+    }
+    
+    .navbar-nav>.active>a {
+        border-radius: 0;
+        color: #fff;
+        background-color: $primary;
+    }
+    
+    .navbar-nav>.active>a:hover,
+    .navbar-nav>.active>a:focus {
+        color: #fff;
+        background-color: $secondary;
+    }
+}
+
+@media(min-width:768px) {
+    .navbar-default {
+        padding: 25px 0;
+        border: 0;
+        background-color: transparent;
+        -webkit-transition: padding .3s;
+        -moz-transition: padding .3s;
+        transition: padding .3s;
+    }
+    
+    .navbar-default .navbar-brand {
+        font-size: 2em;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+
+    .navbar-default .navbar-nav>.active>a {
+        border-radius: 3px;
+    }
+
+    .navbar-default.navbar-shrink {
+        padding: 10px 0;
+        background-color: #222;
+    }
+
+    .navbar-default.navbar-shrink .navbar-brand {
+        font-size: 1.5em;
+    }
+}
