@@ -24,10 +24,10 @@
     "react-scripts": "1.0.13"
   },
   "scripts": {
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "watch-css": "npm run build-css && node-sass-chokidar src/styles -o src/css --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
-    "build-css": "node-sass-chokidar src/ -o src/",
+    "build-css": "node-sass-chokidar src/styles -o src/css",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
