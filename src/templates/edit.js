@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Container from './../components/container'
 import Form from './../components/form'
-import './../styles/main.css'
+import './../css/main.css'
 
 class Edit extends Component {
   render () {

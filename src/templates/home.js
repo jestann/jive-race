@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Container from './../components/container'
-import './../styles/main.css'
+import './../css/main.css'
 
 import starting from './../assets/images/starting.jpg'
 

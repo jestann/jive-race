@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Container from './../components/container'
 import Attribute from './../components/attribute'
-import './../styles/main.css'
+import './../css/main.css'
 
 class Result extends Component {
   constructor (props) {

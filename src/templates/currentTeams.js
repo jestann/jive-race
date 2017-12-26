@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Container from './../components/container'
 import TeamSmall from './../components/teamSmall'
-import './../styles/teams.css'
+import './../css/teams.css'
 
 class CurrentTeams extends Component {
   constructor (props) {
