@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 .message-box {
     border-radius: 5px;
     padding: 20px;
@@ -7,13 +9,13 @@
 }
 
 .message-box.error {
-    background-color: #fbccb2;
-    color: red;
+    background-color: $error-light;
+    color: $error-dark;
 }
 
 .message-box.success {
-    background-color: #c5fdae;
-    color: #184804;
+    background-color: $success-light;
+    color: $success-dark;
 }
 
 .message-box.hidden {

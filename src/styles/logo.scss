@@ -1,0 +1,47 @@
+@import 'variables.scss';
+
+.logo {
+  float: left;
+  height: 60px;
+}
+
+.logo-title {
+  color: white;
+  font-family: $variane;
+  font-size: 3rem;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-left: 5px;
+}
+
+.logo-title:hover {
+  color: $light-grey;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logo-title:hover .logo-image {
+  opacity: .6;
+  cursor: pointer;
+}
+
+.logo-image {
+  float: left;
+  width: 80px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 15px;
+}
+
+.logo-image:hover {
+  opacity: .6;
+  cursor: pointer;
+}
+
+/* 
+animation: logo-image-spin infinite 20s linear;
+@keyframes logo-image-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+*/

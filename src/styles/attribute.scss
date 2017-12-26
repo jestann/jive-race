@@ -1,4 +1,4 @@
-/* show model attribute styling */
+@import 'variables.scss';
 
 .attribute {
   margin-top: 20px;
@@ -7,9 +7,9 @@
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #ddd;
-  color: #666;
-  font-family: sans-serif;
+  background-color: $light-grey;
+  color: $med-grey;
+  font-family: $sans-serif;
 }
 
 .attribute-label {
@@ -25,7 +25,7 @@
 }
 
 .attribute-link {
-  color: #666;
+  color: $med-grey;
   font-weight: bold;
   text-decoration: none;
 }

@@ -1,0 +1,29 @@
+/* Fonts */
+
+@font-face {
+  font-family: 'Variane';
+  src: url('../assets/fonts/variane.woff2') format('woff2'),
+       url('../assets/fonts/variane.woff') format('woff'),
+       url('../assets/fonts/variane.ttf') format('truetype');
+}
+
+$sans-serif: sans-serif;
+$variane: 'Variane', 'Cambria', serif;
+
+/* Colors */
+
+$teal: #07A3A8;
+$scarlet: #FA5E0A;
+$lime: #AAFA0A;
+$aqua: #15E3EB;
+
+$dark-grey: #444;
+$med-grey: #666;
+$light-grey: #ddd;
+
+
+$success-light: #c5fdae;
+$success-dark: #184804;
+$error-light: #fbccb2;
+$error-dark: red;
+

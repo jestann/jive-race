@@ -1,0 +1,12 @@
+@import 'variables.scss';
+
+/* make responsive */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 2rem;
+  background-color: $dark-grey;
+  color: white;
+}

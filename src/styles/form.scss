@@ -1,5 +1,7 @@
+@import 'variables.scss';
+
 .form {
-  color: #222;
+  color: $dark-grey;
   margin: 40px;
 }
 
@@ -27,8 +29,8 @@
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #ddd;
-  color: #666;
+  background-color: $light-grey;
+  color: $med-grey;
   font-family: sans-serif;
 }
 

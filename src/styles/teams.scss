@@ -1,10 +1,11 @@
+@import 'variables.scss';
+
 /* CurrentTeams styling */
 
 .joined {
   display: block;
   margin-left: 20px;
 }
-
 
 /* TeamSmall styling */
 
@@ -15,7 +16,7 @@
   margin: 20px;
   border-radius: 5px;
   padding: 20px 30px;
-  background-color: #07a3a8; /* #15E3EB shoe */
+  background-color: $teal;
   color: white;
 }
 

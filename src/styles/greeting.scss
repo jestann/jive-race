@@ -1,0 +1,29 @@
+@import 'variables.scss';
+
+.greeting {
+  margin-left: 5px;
+  margin-top: 5px;
+  color: white;
+}
+
+.greeting-text {
+  margin-top: 0px;
+}
+
+.greeting .button { /* Additional button styling in button.css */
+  float: right;
+  margin-left: 10px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.greeting .button-label {
+  float: left;
+  margin-left: 5px;
+  margin-right: 2px;
+}
+
+.greeting .button-image {
+  float: left;
+  margin-bottom: 5px;
+}

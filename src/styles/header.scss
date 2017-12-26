@@ -1,0 +1,49 @@
+@import 'variables.scss';
+
+.navbar-main {
+  background-color: $dark-grey;
+  height: 80px;
+  z-index: 100;
+}
+
+.navlink {
+  float: right;
+  margin-top: 10px;
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.navlink:hover,
+.navlink:focus,
+.navlink:active {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navlink::after { /* protects positioning during hover-bold */
+  display: block;
+  content: attr(label);
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.active {
+  color: $lime;
+  font-weight: bold;
+}
+
+@media(min-width:768px) {
+    .navbar-main {
+        background-color: transparent;
+        -webkit-transition: all .3s;
+        -moz-transition: all .3s;
+        transition: all .3s;
+    }
+    
+    .navbar-main.navbar-shrink {
+        background-color: #222;
+    }
+}

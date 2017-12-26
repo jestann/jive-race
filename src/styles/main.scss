@@ -1,72 +1,10 @@
-/* General styling */
+@import 'variables.scss';
 
 body {
   background-color: white; /* shows at the bottom */
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-}
-
-.main { /* this and .app not seen */
-  color: white;
-}
-
-/* Fonts & Colors */
-
-@font-face {
-  font-family: 'Variane';
-  src: url('../assets/fonts/variane.woff2') format('woff2'),
-       url('../assets/fonts/variane.woff') format('woff'),
-       url('../assets/fonts/variane.ttf') format('truetype');
-}
-
-/* 
-  teal: #07A3A8 
-  scarlet: #FA5E0A
-  lime: #AAFA0A
-  aqua: #15E3EB
-*/
-
-/* Template Container styling */
-
-.container-mine {
-  background-color: white;
-  position: absolute;
-  top: 80px;
-  bottom: 0px;
-  width: 100%;
-  z-index: 0;
-}
-
-.hero { /* needs to be made responsive */
-  background-color: white;
-  position: absolute;
-  min-height: 90%;
-  left: 22%;
-  right: 22%;
-  padding: 20px 40px;
-}
-
-.title {
-  font-family: 'Variane', 'Cambria', serif;
-  font-size: 4rem;
-  background-color: white;
-  padding: 15px;
-  text-align: center;
-  color: #FA5E0A;
-}
-
-.heading {
-  font-weight: bold;
-}
-
-.container-body {
-  color: #222;
-}
-
-.footer {
-  background-color: #444;
-  color: white;
 }
 
 .show {
@@ -79,15 +17,15 @@ body {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #ddd;
-  color: #666;
+  background-color: $light-grey;
+  color: $med-grey;
   font-family: sans-serif;
   font-weight: bold;
   text-decoration: none;
 }
 
 .show-button:hover {
-  background-color: #666;
+  background-color: $med-grey;
   color: white;
 }
 
