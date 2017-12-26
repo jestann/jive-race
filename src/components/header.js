@@ -1,16 +1,29 @@
 import React, { Component } from 'react'
-import './../styles/navbar.css'
-
 import Logo from './logo'
+import Greeting from './greeting'
 import Navlink from './navlink'
+/* import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap'; */
+import './../css/header.css'
 
 // make this collapse for mobile
 
-class Navbar extends Component {
+class Header extends Component {
   render () {
     return (
-      <div className="navbar-mine">
+      <div className="navbar-main">
         <Logo {...this.props} />
+        <Greeting {...this.props} />
         <Navlink to="/contact" label="Contact" />
         <Navlink to="/currentteams" label="Teams" />
         <Navlink to="/register" label="Register" />
@@ -21,7 +34,7 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar
+export default Header
 
 // <Link to={`/user/${user.id}`}>{user.name}</Link>
 // <Link to="/inbox">Inbox</Link>

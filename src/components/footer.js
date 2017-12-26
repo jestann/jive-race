@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './../styles/main.css'
+import './../css/footer.css'
 
 // make this collapse for mobile
 

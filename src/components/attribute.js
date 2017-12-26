@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import './../styles/attribute.css'
+import './../css/attribute.css'
 
 class Attribute extends Component {
   render () {

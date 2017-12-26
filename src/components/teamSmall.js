@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Button from './button'
-import './../styles/teams.css'
+import './../css/teams.css'
 
 class TeamSmall extends Component {
   render () {

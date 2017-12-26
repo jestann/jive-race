@@ -3,18 +3,18 @@ import Markdown from 'react-markdown'
 
 import Title from './../components/title'
 import MessageBox from './../components/messageBox'
-import './../styles/main.css'
+import './../css/container.css'
 
 class Container extends Component {
   render (props) {
     let content = (this.props.markdown) ? <Markdown source={this.props.markdown} /> : (this.props.content)
-    let cssLabel = 'hero ' + this.props.cssLabel
+    let cssLabel = 'container-body ' + this.props.cssLabel
     return (
-      <div className='container-mine'>
+      <div className='container-box'>
         <Title title={this.props.title} />
         <div className={cssLabel}>
           <MessageBox {...this.props} />
-          <div className='container-body'>
+          <div className='content'>
             {content} 
           </div>
         </div>

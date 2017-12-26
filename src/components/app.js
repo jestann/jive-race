@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import './../styles/main.css'
+import './../css/main.css'
 
 import Fetcher from './../tools/fetcher'
-import Navbar from './navbar'
+import Header from './header'
 import Main from './main'
 import Footer from './footer'
 
@@ -59,7 +59,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="app">
-          <Navbar 
+          <Header 
             fetcher={this.state.fetcher}
             loggedIn={this.state.loggedIn} 
             token={this.state.token} 

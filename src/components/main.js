@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import './../styles/main.css'
+import './../css/main.css'
 
 import Home from './../templates/home'
 import About from './../templates/about'

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './../styles/main.css'
+import './../css/container.css'
 
 class Title extends Component {
   render (props) {
