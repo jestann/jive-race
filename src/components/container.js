@@ -10,13 +10,10 @@ class Container extends Component {
     let content = (this.props.markdown) ? <Markdown source={this.props.markdown} /> : (this.props.content)
     let cssLabel = 'container-body ' + this.props.cssLabel
     return (
-      <div className='container-box'>
-        <Title title={this.props.title} />
-        <div className={cssLabel}>
-          <MessageBox {...this.props} />
-          <div className='content'>
-            {content} 
-          </div>
+      <div className={cssLabel}>
+        <MessageBox {...this.props} />
+        <div className='content'>
+          {content} 
         </div>
       </div>
     )

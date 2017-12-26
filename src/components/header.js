@@ -2,34 +2,56 @@ import React, { Component } from 'react'
 import Logo from './logo'
 import Greeting from './greeting'
 import Navlink from './navlink'
-/* import {
+import {
   Collapse,
   Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap'; */
+  NavItem } from 'reactstrap';
 import './../css/header.css'
 
-// make this collapse for mobile
-
 class Header extends Component {
+  constructor(props) {
+    super(props)
+    this.toggle = this.toggle.bind(this)
+    this.state = {
+      isOpen: false
+    }
+  }
+  
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    })
+  }
+  
   render () {
     return (
-      <div className="navbar-main">
-        <Logo {...this.props} />
+      <Navbar className="header" expand="md">
+        <NavbarBrand href="/"><Logo {...this.props} /></NavbarBrand>
         <Greeting {...this.props} />
-        <Navlink to="/contact" label="Contact" />
-        <Navlink to="/currentteams" label="Teams" />
-        <Navlink to="/register" label="Register" />
-        <Navlink to="/currentrace" label="Race 2018" />
-        <Navlink to="/" label="Home" />
-      </div>
+        <NavbarToggler onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar>
+          <Nav className="ml-auto" pills>
+            <NavItem>
+              <Navlink to="/" label="Home" />
+            </NavItem>
+            <NavItem>
+              <Navlink to="/register" label="Register" />
+            </NavItem>
+            <NavItem>
+              <Navlink to="/currentrace" label="Race 2018" />
+            </NavItem>
+            <NavItem>
+              <Navlink to="/currentteams" label="Teams" />
+            </NavItem>
+            <NavItem>
+              <Navlink to="/contact" label="Contact" />
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
     )
   }
 }

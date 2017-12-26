@@ -2,26 +2,31 @@
 
 body {
   background-color: white; /* shows at the bottom */
-  margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  margin: 0;
+  font-family: $sans-serif;
 }
+
+.hidden {
+  display: none;
+}
+
+
 
 .show {
   margin: 40px;
 }
 
 .show-button {
-  margin-top: 50px; /* something not working here */
-  margin-right: 20px;
+  background-color: $light-grey;
+  color: $med-grey;
+  font-weight: bold;
+  text-decoration: none;
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: $light-grey;
-  color: $med-grey;
-  font-family: sans-serif;
-  font-weight: bold;
-  text-decoration: none;
+  margin-top: 50px; /* something not working here */
+  margin-right: 20px;
 }
 
 .show-button:hover {
@@ -29,6 +34,3 @@ body {
   color: white;
 }
 
-.hidden {
-  display: none;
-}

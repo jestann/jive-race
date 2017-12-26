@@ -1,34 +1,10 @@
 @import 'variables.scss';
 
-.container-box {
+.container-body {
   background-color: white;
-  position: absolute;
-  top: 80px;
-  bottom: 0;
-  width: 100%;
+  padding: 15% 5%;
+  margin-top: 80px;
   z-index: 0;
-}
-
-.container-body { /* needs to be made responsive */
-  position: absolute;
-  min-height: 90%;
-  left: 22%;
-  right: 22%;
-  padding: 20px 40px;
-  background-color: white;
-}
-
-.title {
-  background-color: white;
-  color: $scarlet;
-  font-family: $variane;
-  font-size: 4rem;
-  text-align: center;
-  padding: 15px;
-}
-
-.heading {
-  font-weight: bold;
 }
 
 .content {

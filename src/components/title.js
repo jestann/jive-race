@@ -3,8 +3,10 @@ import './../css/container.css'
 
 class Title extends Component {
   render (props) {
+    let cssLabel = this.props.img ? "title-img" : "title"
+    
     return (
-      <div className="title">
+      <div className={cssLabel}>
         {this.props.title}
       </div>
     )

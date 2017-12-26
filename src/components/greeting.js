@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Button from './../components/button'
+import Alink from './../components/alink'
+import { NavItem } from 'reactstrap'
 import './../css/greeting.css'
 
 class Greeting extends Component {
@@ -11,16 +12,16 @@ class Greeting extends Component {
     if (this.props.loggedIn && this.props.user) {
       return (
         <div className="greeting">
-          <span className="greeting-text">Welcome, {this.props.user.username}.</span>
-          <Button label="Log Out" src={logoutImg.src} alt={logoutImg.alt} cssLabel="logout hover-bold" onClick={this.props.logout} />
+            <span className="greeting-text">Welcome, {this.props.user.username}.</span>
+            <Alink label="Log Out" src={logoutImg.src} alt={logoutImg.alt} cssLabel="logout" onClick={this.props.logout} />
         </div>
       )
     } else {
       return (
         <div className="greeting">
           <span className="greeting-text">Welcome, Guest.</span>
-          <Button label="Log In" src={loginImg.src} alt={loginImg.alt} cssLabel="login hover-bold" link="/login" onClick={() => 'empty'} />
-          <Button label="Sign Up" src={signupImg.src} alt={signupImg.alt} cssLabel="signup hover-bold" link="/signup" onClick={() => 'empty'} />
+          <Alink label="Log In" src={loginImg.src} alt={loginImg.alt} cssLabel="login" link="/login" />
+          <Alink label="Sign Up" src={signupImg.src} alt={signupImg.alt} cssLabel="signup" link="/signup" />
         </div>
       )
     }

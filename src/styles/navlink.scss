@@ -1,0 +1,36 @@
+@import 'variables.scss';
+
+.navlink {
+  float: right;
+  color: white;
+  font-family: $variane;
+  font-size: 1.4rem;
+  letter-spacing: .2rem;
+  border-radius: 5px;
+  padding: .5rem;
+  margin: .5rem;
+}
+
+.navlink:hover,
+.navlink:focus,
+.navlink:active {
+  color: white;
+  text-decoration: none;
+  background-color: $teal;
+  cursor: pointer;
+}
+
+
+.navlink::after { /* protects positioning during hover-bold */
+  display: block;
+  content: attr(label);
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.active {
+  background-color: $teal;
+  font-weight: bold;
+}
