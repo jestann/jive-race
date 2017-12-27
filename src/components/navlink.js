@@ -6,11 +6,9 @@ import './../css/navlink.css'
 class Navlink extends Component {
   render () {
     return (
-      <div>
-        <NavLink {...this.props} exact className='navlink'>
-          {this.props.label}
-        </NavLink>
-      </div>
+      <NavLink {...this.props} exact className='navlink'>
+        {this.props.label}
+      </NavLink>
     )
   }
 }

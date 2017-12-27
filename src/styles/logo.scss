@@ -2,13 +2,16 @@
 
 .logo {
   float: left;
-  margin-top: 1rem;
+  margin-top: .8rem;
+  margin-left: .8rem;
+  margin-right: 0;
+  margin-bottom: 0;
 }
 
 .logo-title {
   color: white;
   font-family: $variane;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 .logo-title:hover {
@@ -19,7 +22,7 @@
 
 .logo-image {
   float: left;
-  width: 4rem;
+  width: 3rem;
 }
 
 .logo-image:hover {
@@ -27,10 +30,16 @@
   cursor: pointer;
 }
 
-/* 
-animation: logo-image-spin infinite 20s linear;
-@keyframes logo-image-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@media(min-width:576px) {
+  .logo {
+    margin-top: 1rem;
+  }
+  
+  .logo-title {
+    font-size: 2.5rem;
+  }
+  
+  .logo-image {
+    width: 4rem;
+  }
 }
-*/
