@@ -1,14 +1,10 @@
 import React, { Component } from 'react'
-import './../css/container.css'
+import './../css/title.css'
 
 class Title extends Component {
   render (props) {
-    let cssLabel = this.props.img ? "title-img" : "title"
-    
     return (
-      <div className={cssLabel}>
-        {this.props.title}
-      </div>
+      <div className="title">{this.props.title}</div>
     )
   }
 }

@@ -34,14 +34,14 @@ class Navbar extends Component {
             <Navlink to="/contact" label="Contact" />
             <Navlink to="/currentteams" label="Teams" />
             <Navlink to="/currentrace" label="Race 2018" />
-            <Navlink to="/register" label="Register" />
+            <Navlink to="/register" label="Join" />
             <Navlink to="/" label="Home" />
           </div>
         </div>
         <div className={this.state.navCSS}>
           <div className="nav-separator"></div>
           <div className="nb-mobile-list-item"><Navlink to="/" label="Home" /></div>
-          <div className="nb-mobile-list-item"><Navlink to="/register" label="Register" /></div>
+          <div className="nb-mobile-list-item"><Navlink to="/register" label="Join" /></div>
           <div className="nb-mobile-list-item"><Navlink to="/currentrace" label="Race 2018" /></div>
           <div className="nb-mobile-list-item"><Navlink to="/currentteams" label="Teams" /></div>
           <div className="nb-mobile-list-item"><Navlink to="/contact" label="Contact" /></div>
