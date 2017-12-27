@@ -27,7 +27,7 @@ class Main extends Component {
     return (
       <div className="main">
         <Switch>
-        <Route exact path="/" render={() => <Home {...this.props} />} />
+          <Route exact path="/" render={() => <Home {...this.props} />} />
           <Route exact path="/about" render={() => <About {...this.props} />} />
           <Route exact path="/register" render={() => <Register {...this.props} />} />
           <Route exact path="/currentrace" component={() => <CurrentRace {...this.props} />} />

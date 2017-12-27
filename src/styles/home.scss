@@ -1,0 +1,71 @@
+@import 'variables.scss';
+
+.title-img {
+    width: 100%;
+}
+
+.home .content {
+    padding: 2% 5%;
+    font-size: 1.3rem;
+}
+
+.spacer {
+    margin-top: 1.5rem;
+}
+
+.highlight {
+    padding: 1rem;
+    font-family: $alef;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    letter-spacing: .1rem;
+    text-align: right;
+}
+
+.caption {
+    font-family: $alef;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+.main-img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.highlight-img {
+    margin: 1rem;
+}
+
+.final-section {
+    background-color: $light-grey;
+    padding-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.logo-caption {
+    text-align: left;
+    padding: 0;
+    margin-left: 2rem;
+}
+
+.join {
+    background-color: $teal;
+    width: 100%;
+    padding: .5rem;
+    border-radius: 5px;
+    text-align: center;
+    font-family: $variane;
+    font-size: 4rem;
+    letter-spacing: .2rem;
+}
+
+.join a {
+    color: white;
+}
+
+.join:hover,
+.join:focus,
+.join:active {
+    opacity: .7;
+}

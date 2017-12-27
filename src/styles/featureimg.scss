@@ -1,6 +1,7 @@
 @import 'variables.scss';
 
 .feature-img {
+    background-color: $light-grey;
     background-repeat: no-repeat;
     background-position: center top;
     background-attachment: scroll;
@@ -11,9 +12,9 @@
 }
 
 .feature-img:before {
-	content: '';
 	display: block;
-	padding-top: 80%; 	/* for mobile ratio of 1003:756 */
+	content: '';
+	// padding-top: 54%; 	/* divide y by x for mobile ratio of x:y */
 }
 
 .feature-img .feature-padding {
@@ -24,13 +25,9 @@
 	right: 0;
 }
 
-@media(min-width:$lg) {
+@media(min-width:1000px) {
     .feature-img {
         margin-top: 0px;
-    }
-    
-    .feature-img:before {
-    	padding-top: 32%; 	/* for non-mobile ratio of 2000:641 */
     }
 }
 
