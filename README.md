@@ -1,12 +1,23 @@
 # Jive Race
 
-Jive Race is a team-building race application. Users can register for races and create and build teams of runners.
+Jive Race is a team-building race application. Users can register for races and create and build teams of runners. This app is built to visualize the [Jive Race API](https://jive-race-api.herokuapp.com).
 
 **Note:** This app is still in development.
 
 ### Build Frameworks
 
 This project is built on [React](https://reactjs.org/) with [React Router 4](https://www.npmjs.com/package/react-router-dom), hosted on [AWS S3](https://aws.amazon.com/s3/). It was initialized from [create-react-app](https://github.com/facebookincubator/create-react-app).
+
+### Dependencies
+
+- [Bootstrap 4](https://getbootstrap.com/)
+- [Sass](http://sass-lang.com/)
+- [reactstrap](https://reactstrap.github.io/)
+- [jQuery {bootstrap}](https://github.com/jquery/jquery)
+- [Popper.js {bootstrap}](https://github.com/FezVrasta/popper.js)
+- [node-sass-chokidar](https://github.com/michaelwayman/node-sass-chokidar)
+- [npm-run-all](https://github.com/mysticatea/npm-run-all)
+- [react-markdown](https://github.com/rexxars/react-markdown)
 
 ### Project Objectives
 
@@ -47,17 +58,26 @@ This repository builds on the [Jive Race API](https://jive-race-api.herokuapp.co
 
 ### File Structure
 
-This app has the following file structure.
+This app has the following file structure. 
+
+**Note:** The directory `src/css` holds the `.css` files compiled using `node-sass-chokidar`. All style editing should be done in the `.scss` files in the `src/styles` directory.
 
 ```
 ├── public
 │   └── ...
 ├── src
 │   ├── assets
-│   │   └── ...
+│   │   ├── fonts
+│   │   │   └── ...
+│   │   ├── icons
+│   │   │   └── ...
+│   │   └── images   
+│   │       └── ...
 │   ├── components
 │   │   └── ...
 │   ├── content
+│   │   └── ...
+│   ├── css
 │   │   └── ...
 │   ├── spec
 │   │   └── ...
@@ -78,10 +98,10 @@ This app has the following file structure.
 
 This app is still in development. These are the current development objectives.
 
-- Overhaul custom design scheme to improve responsiveness and implement [Bootstrap](https://getbootstrap.com/).
-- Fully integrate authentication functionality with API and across entire site.
-- Integrate model show pages with API and add edit/delete buttons based on user authorization. 
-- Integrate team membership functionality with API.
-- Add markdown rendering for static content.
+- [X] Overhaul custom design scheme to improve responsiveness and implement [Bootstrap](https://getbootstrap.com/) and [Sass](http://sass-lang.com/).
+- [X] Add markdown rendering for static content.
+- [ ] Fully integrate authentication functionality with API and across entire site.
+- [ ] Integrate model show pages with API and add edit/delete buttons based on user authorization. 
+- [ ] Integrate team membership functionality with API.
 
 The basic visual components and design functionality have been built and integration with the API is in progress.
