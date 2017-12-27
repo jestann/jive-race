@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Markdown from 'react-markdown'
 
-import Title from './../components/title'
 import MessageBox from './../components/messageBox'
 import './../css/container.css'
 
