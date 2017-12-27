@@ -1,13 +1,8 @@
 @import 'variables.scss';
 
 .title {
-  color: $scarlet;
+  color: $teal;
   font-family: $variane;
   font-size: 4rem;
-  text-align: center;
-  padding: 2rem;
-}
-
-.title-img {
-  background-img: url('');
+  letter-spacing: .2rem;
 }
