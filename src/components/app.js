@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 import './../css/main.css'
 
 import Fetcher from './../tools/fetcher'
-import Header from './header'
+import Navbar from './navbar'
 import Main from './main'
 import Footer from './footer'
 
@@ -59,7 +59,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="app">
-          <Header 
+          <Navbar 
             fetcher={this.state.fetcher}
             loggedIn={this.state.loggedIn} 
             token={this.state.token} 
