@@ -105,3 +105,22 @@ This app is still in development. These are the current development objectives.
 - [ ] Integrate team membership functionality with API.
 
 The basic visual components and design functionality have been built and integration with the API is in progress.
+
+### Visuals
+
+The most recent visuals for the user experience are below.
+
+#### Main
+
+<img alt="jive home 1" src="public/readme/home-1.png" width="75%" align="center">
+<img alt="jive home 2" src="public/readme/home-2.png" width="75%" align="center">
+<img alt="jive home 3" src="public/readme/home-3.png" width="75%" align="center">
+<img alt="jive home 4" src="public/readme/home-4.png" width="75%" align="center">
+<img alt="jive home 5" src="public/readme/home-5.png" width="75%" align="center">
+
+#### Mobile Experience
+
+<img alt="mobile experience" src="public/readme/mobile-contact.png" width="75%" align="center">
+<img alt="mobile navigation" src="public/readme/mobile-nav.png" width="75%" align="center">
+<img alt="mobile user options" src="public/readme/mobile-options.png" width="75%" align="center">
+<img alt="mobile login" src="public/readme/mobile-login.png" width="75%" align="center">
