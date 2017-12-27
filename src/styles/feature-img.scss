@@ -1,0 +1,36 @@
+@import 'variables.scss';
+
+.feature-img {
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: scroll;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    background-size: 100% auto;
+    -o-background-size: 100% auto; 
+}
+
+.feature-img:before {
+	content: '';
+	display: block;
+	padding-top: 80%; 	/* for mobile ratio of 1003:756 */
+}
+
+.feature-img .feature-padding {
+	position:  absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+@media(min-width:$lg) {
+    .feature-img {
+        margin-top: 0px;
+    }
+    
+    .feature-img:before {
+    	padding-top: 32%; 	/* for non-mobile ratio of 2000:641 */
+    }
+}
+

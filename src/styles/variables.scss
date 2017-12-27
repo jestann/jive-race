@@ -1,0 +1,69 @@
+/* Breakpoints */
+
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+
+/* Fonts */
+
+@font-face {
+  font-family: 'Alef';
+  src: url('../assets/fonts/alef.woff2') format('woff2'),
+       url('../assets/fonts/alef.woff') format('woff'),
+       url('../assets/fonts/alef.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ChunkFive';
+  src: url('../assets/fonts/chunkfive.woff2') format('woff2'),
+       url('../assets/fonts/chunkfive.woff') format('woff'),
+       url('../assets/fonts/chunkfive.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Variane';
+  src: url('../assets/fonts/variane.woff2') format('woff2'),
+       url('../assets/fonts/variane.woff') format('woff'),
+       url('../assets/fonts/variane.ttf') format('truetype');
+}
+
+$alef: 'Alef', 'Cambria', serif;
+$chunkfive: 'ChunkFive', 'Cambria', serif;
+$variane: 'Variane', 'Cambria', serif;
+$serif: 'Cambria', 'Georgia', serif;
+$sans-serif: 'Alef', 'Trebuchet MS', sans-serif;
+
+
+/* Colors */
+
+$teal: #07A3A8;
+$scarlet: #FA5E0A;
+$lime: #AAFA0A;
+$aqua: #15E3EB;
+
+$dark-grey: #444;
+$med-grey: #666;
+$light-grey: #ddd;
+
+$success-light: #c5fdae;
+$success-dark: #184804;
+$error-light: #fbccb2;
+$error-dark: red;
+
+
+/* Functional Classes */
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.hide {
+  visibility: hidden;
+}
+

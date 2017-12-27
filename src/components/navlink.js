@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import './../styles/navbar.css'
+// import { NavLink } from 'reactstrap';
+import './../css/navlink.css'
 
 class Navlink extends Component {
   render () {
     return (
-      <div>
-        <NavLink {...this.props} exact className='navlink' activeStyle={{ fontWeight: "bold" }} >
-          {this.props.label}
-        </NavLink>
-      </div>
+      <NavLink {...this.props} exact className='navlink'>
+        {this.props.label}
+      </NavLink>
     )
   }
 }

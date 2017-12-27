@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Attribute from './attribute'
-import './../styles/attribute.css'
+import './../css/attribute.css'
 
 class AttributeList extends Component {
   render () {

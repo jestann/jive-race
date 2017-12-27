@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import Container from './../components/container'
 import AttributeList from './../components/attributeList'
 import Attribute from './../components/attribute'
-
-import './../styles/main.css'
+import './../css/main.css'
 
 class Results extends Component {
   constructor (props) {

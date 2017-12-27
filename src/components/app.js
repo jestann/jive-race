@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import './../styles/main.css'
+import './../css/main.css'
 
 import Fetcher from './../tools/fetcher'
 import Navbar from './navbar'

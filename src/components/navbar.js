@@ -1,21 +1,51 @@
 import React, { Component } from 'react'
-import './../styles/navbar.css'
-
 import Logo from './logo'
+import Greeting from './greeting'
 import Navlink from './navlink'
 
-// make this collapse for mobile
+import toggler from './../assets/icons/nav-toggler.png'
+import './../css/navbar.css'
 
 class Navbar extends Component {
+  constructor (props) {
+    super(props)
+    this.toggleNav = this.toggleNav.bind(this)
+    this.state = { navCSS: "navbar-list mobile-list hidden" }
+  }
+  
+  toggleNav () {
+    if (this.state.navCSS === "navbar-list mobile-list hidden") {
+      this.setState({ navCSS: "navbar-list mobile-list"})
+    } else {
+      this.setState({ navCSS: "navbar-list mobile-list hidden"})
+    }
+  }
+
   render () {
     return (
-      <div className="navbar-mine">
-        <Logo {...this.props} />
-        <Navlink to="/contact" label="Contact" />
-        <Navlink to="/currentteams" label="Teams" />
-        <Navlink to="/register" label="Register" />
-        <Navlink to="/currentrace" label="Race 2018" />
-        <Navlink to="/" label="Home" />
+      <div role="navigation">
+        <div className="navbar-custom">
+          <Logo {...this.props} />
+          <Greeting {...this.props} toggleGreeting={this.toggleGreeting} greetingCSS={this.state.greetingCSS} />
+          <div className="navbar-toggler" onClick={this.toggleNav}>
+            <img className="nb-toggler-img" alt="Toggle Navigation" src={toggler} />
+          </div>
+          <div className="navbar-spread">
+            <Navlink to="/contact" label="Contact" />
+            <Navlink to="/currentteams" label="Teams" />
+            <Navlink to="/currentrace" label="Race 2018" />
+            <Navlink to="/register" label="Register" />
+            <Navlink to="/" label="Home" />
+          </div>
+        </div>
+        <div className={this.state.navCSS}>
+          <div className="nav-separator"></div>
+          <div className="nb-mobile-list-item"><Navlink to="/" label="Home" /></div>
+          <div className="nb-mobile-list-item"><Navlink to="/register" label="Register" /></div>
+          <div className="nb-mobile-list-item"><Navlink to="/currentrace" label="Race 2018" /></div>
+          <div className="nb-mobile-list-item"><Navlink to="/currentteams" label="Teams" /></div>
+          <div className="nb-mobile-list-item"><Navlink to="/contact" label="Contact" /></div>
+        </div>
       </div>
     )
   }

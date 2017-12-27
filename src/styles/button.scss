@@ -1,4 +1,4 @@
-/* Button styling */
+@import 'variables.scss';
 
 .button:hover {
   cursor: pointer;
@@ -14,14 +14,14 @@
   margin-left: 0px;
   padding: 10px;
   border-radius: 5px;
-  background-color: #666;
+  background-color: $med-grey;
   color: white;
   font-weight: bold;
 }
 
 .button.submit:hover {
-  background-color: #bbb;
-  color: #666;
+  background-color: $light-grey;
+  color: $med-grey;
 }
 
 .button.hover-bold:hover {

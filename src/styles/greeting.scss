@@ -1,0 +1,91 @@
+@import 'variables.scss';
+
+/* Mobile */
+
+.greeting {
+  float: left;
+  color: white;
+  font-family: $alef;
+  font-size: 1rem;
+  margin-left: .5rem;
+  margin-top: 1rem;
+}
+
+.greeting-toggler-img {
+  box-sizing: content-box;
+  width: 1.1rem;
+  height: auto;
+}
+
+.greeting-toggler-img:hover {
+  opacity: .8;
+  cursor: pointer;
+}
+
+.greeting-collapse {
+  display: none;
+}
+
+/* Mobile Dropdown Menu */
+
+.greeting-list {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  padding: .5rem;
+  text-align: left;
+  z-index: 100;
+}
+
+.greeting-list-header {
+  color: $dark-grey;
+}
+
+.greeting-list-item, 
+.greeting-list-item a {
+  color: $teal;
+}
+
+.greeting-list-item:hover,
+.greeting-list-item a:hover {
+  color: $scarlet;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.greeting-list-img {
+  width: 1.1rem;
+  height: auto;
+  padding-right: .2rem;
+}
+
+/* Laptops + Desktops */
+
+@media(min-width:576px) {
+  .greeting {
+    margin-left: 1.4rem;
+    margin-top: 1rem;
+  }
+
+  .greeting-dropdown {
+    display: none;
+  }
+  
+  .greeting-collapse {
+    display: block;
+  }
+  
+  .greeting .alink-image {
+    width: .8rem;
+    height: auto;
+  }
+
+  .greeting-collapse .signup {
+    margin-left: 0;
+  }
+  
+  .greeting-collapse .logout {
+    margin-left: 0;
+  }
+}

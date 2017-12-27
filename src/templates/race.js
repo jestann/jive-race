@@ -5,7 +5,7 @@ import Container from './../components/container'
 import AttributeList from './../components/attributeList'
 import Attribute from './../components/attribute'
 
-import './../styles/main.css'
+import './../css/main.css'
 
 class Race extends Component {
   constructor (props) {
