@@ -98,7 +98,7 @@ This app has the following file structure.
 
 This app is still in development. These are the current development objectives.
 
-- [X] Overhaul custom design scheme to improve responsiveness and implement [Bootstrap](https://getbootstrap.com/) and [Sass](http://sass-lang.com/).
+- [X] Overhaul custom design scheme to improve mobile experience and implement [Bootstrap](https://getbootstrap.com/) and [Sass](http://sass-lang.com/).
 - [X] Add markdown rendering for static content.
 - [ ] Fully integrate authentication functionality with API and across entire site.
 - [ ] Integrate model show pages with API and add edit/delete buttons based on user authorization. 
