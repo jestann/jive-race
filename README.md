@@ -120,7 +120,7 @@ The most recent visuals for the user experience are below.
 
 #### Mobile Experience
 
-<img alt="mobile experience" src="public/readme/mobile-contact.png" width="75%" align="center">
-<img alt="mobile navigation" src="public/readme/mobile-nav.png" width="75%" align="center">
-<img alt="mobile user options" src="public/readme/mobile-options.png" width="75%" align="center">
-<img alt="mobile login" src="public/readme/mobile-login.png" width="75%" align="center">
+<img alt="mobile experience" src="public/readme/mobile-contact.png" width="30%" align="center">
+<img alt="mobile navigation" src="public/readme/mobile-nav.png" width="30%" align="center">
+<img alt="mobile user options" src="public/readme/mobile-options.png" width="30%" align="center">
+<img alt="mobile login" src="public/readme/mobile-login.png" width="30%" align="center">
