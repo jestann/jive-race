@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import { Row, Col } from 'reactstrap'
 import FormBox from './formBox'
 import Button from './button'
+
+import bridge from './../assets/images/bridge.jpg'
 import './../css/form.css'
 
 class Form extends Component {
@@ -41,16 +44,23 @@ class Form extends Component {
 
     return (
       <div className='form'>
-        <div className='heading'>{this.props.heading}</div>
-        <div className='body'>{this.props.body}</div>
-        <div className='formboxes'>
-          {formboxes}
-        </div>
-        <Button cssLabel="submit" label="Submit" onClick={this.handleSubmit} />
-        <div className='return-form'>
-          {returnFormHeader}
-          {returnForm}
-        </div>
+        <Row>
+          <Col lg="7" md="6" sm="12" xs="12">
+            <div className='heading'>{this.props.heading}</div>
+            <div className='body'>{this.props.body}</div>
+            <div className='formboxes'>
+              {formboxes}
+            </div>
+            <Button cssLabel="submit" label="Submit" onClick={this.handleSubmit} />
+            <div className='return-form'>
+              {returnFormHeader}
+              {returnForm}
+            </div>
+          </Col>
+          <Col lg="5" md="6" sm="8" xs="12">
+            <img className='main-img' src={bridge} alt="runner stretching at a bridge" />
+          </Col>
+        </Row>
       </div>
     )
   }
