@@ -1,0 +1,22 @@
+/* Show User, Race, Team, Result */
+
+.show {
+  margin: 40px;
+}
+
+.show-button {
+  background-color: $light-grey;
+  color: $med-grey;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 50px; /* something not working here */
+  margin-right: 20px;
+}
+
+.show-button:hover {
+  background-color: $med-grey;
+  color: white;
+}

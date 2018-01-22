@@ -2,24 +2,24 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import './../css/main.css'
 
-import Home from './../templates/home'
-import About from './../templates/about'
-import Register from './../templates/register'
-import CurrentRace from './../templates/currentRace'
-import CurrentTeams from './../templates/currentTeams'
-import Contact from './../templates/contact'
+import Home from './../views/home'
+import About from './../views/about'
+import Register from './../views/register'
+import CurrentRace from './../views/currentRace'
+import CurrentTeams from './../views/currentTeams'
+import Contact from './../views/contact'
 
-import Signup from './../templates/signup'
-import Login from './../templates/login'
+import Signup from './../views/signup'
+import Login from './../views/login'
 
-import Edit from './../templates/edit'
+import Edit from './../views/edit'
 
-import Results from './../templates/results'
+import Results from './../views/results'
 
-import User from './../templates/user'
-import Race from './../templates/race'
-import Team from './../templates/team'
-import Result from './../templates/result'
+import User from './../views/user'
+import Race from './../views/race'
+import Team from './../views/team'
+import Result from './../views/result'
 
 
 class Main extends Component {
