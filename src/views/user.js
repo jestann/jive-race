@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-
-import Container from './../components/container'
-import AttributeList from './../components/attributeList'
-import Attribute from './../components/attribute'
-
+import UserSelfView from './userSelfView'
+import Fetcher from './../tools/fetcher'
 import './../css/main.css'
 
 class User extends Component {
