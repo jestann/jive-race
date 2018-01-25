@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import LoginView from './../../views/navigation/loginView'
-import './../../css/views/view.css'
+import LoginView from './../views/navigation/loginView'
 
 class Login extends Component {
   constructor (props) { 

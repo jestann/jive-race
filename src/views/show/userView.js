@@ -4,7 +4,7 @@ import Title from './../../components/atoms/title'
 import AttributeList from './../../components/atoms/attributeList'
 import Attribute from './../../components/atoms/attribute'
 import Loading from './../../components/atoms/loading'
-import './../css/views/view.css'
+import './../../css/views/view.css'
 
 function UserView (props) {
   let title = 'User: ' + props.userData.name

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Form from './../../components/forms/form'
-import './../../css/views/view.css'
+import SignupView from './../views/navigation/signupView'
 
 class Signup extends Component {
   constructor (props) {
@@ -23,19 +22,7 @@ class Signup extends Component {
   }
   
   render () {
-    let content = <Form 
-      heading="Sign up to join Jive Race" 
-      body="Enter your email address. Then choose a username and password below."
-      formboxes={[
-        { label: "email", type: "text", placeholder: "email" },
-        { label: "username", type: "text", placeholder: "username" },
-        { label: "password", type: "password", placeholder: "" }
-      ]}
-      handleSubmit={this.signup}
-    />
-    return (
-      <Container title="Sign Up" content={content} cssLabel="signup" {...this.props} />
-    )
+    return <SignupView {...this.props} signup={this.signup} />
   }
 }
 

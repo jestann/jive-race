@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import UserView from './../views/userView'
 import Fetcher from './../tools/fetcher'
-import './../css/main.css'
 
 class User extends Component {
   constructor (props) {
