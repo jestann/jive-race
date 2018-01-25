@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Title from './../components/title'
 import AttributeList from './../components/attributeList'
 import Attribute from './../components/attribute'
-import './../css/show.css'
+import './../css/view.css'
 
 function UserView (props) {
   let title = 'User: ' + props.userBeingViewed.name
@@ -26,7 +26,7 @@ function UserView (props) {
     )
   } else {
     return (
-      <div className="container">
+      <div className="view">
         <Title title={title} />
         <div className='show'>
           <Attribute label='Bio' content={props.userBeingViewed.bio} long={true} />

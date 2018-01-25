@@ -1,10 +1,10 @@
-/* Show User, Race, Team, Result */
+/* Views */
 
-.show {
+.view {
   margin: 40px;
 }
 
-.show-button {
+.view-button {
   background-color: $light-grey;
   color: $med-grey;
   font-weight: bold;
@@ -16,7 +16,7 @@
   margin-right: 20px;
 }
 
-.show-button:hover {
+.view-button:hover {
   background-color: $med-grey;
   color: white;
 }

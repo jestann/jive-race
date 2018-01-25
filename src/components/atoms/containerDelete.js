@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Markdown from 'react-markdown'
-import MessageBox from './../components/messageBox'
-import './../css/container.css'
+import MessageBox from './../navigation/messageBox'
+import './../../css/atoms/container.css'
 
 class Container extends Component {
   render (props) {

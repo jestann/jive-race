@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'reactstrap'
 import FormBox from './formBox'
-import Button from './button'
-
-import bridge from './../assets/images/bridge.jpg'
-import './../css/form.css'
+import Button from './../atoms/button'
+import bridge from './../../assets/images/bridge.jpg'
+import './../../css/forms/form.css'
 
 class Form extends Component {
   constructor (props) {
@@ -35,7 +34,7 @@ class Form extends Component {
       <FormBox label={formbox.label} type={formbox.type} placeholder={formbox.placeholder} key={i} onChange={this.handleInputChange} />
     ))
     
-    // displays the submitted data
+    // displays the submitted data (for development error checking)
     let returnFormHeader = this.state.submitted ? <div className='return-form-header'>The following values were submitted.</div> : ''
     let returnFormData = this.state.values.map((obj, i) => (
       <div className='return-form-item' key={i}>{obj.label}: {obj.value}</div>

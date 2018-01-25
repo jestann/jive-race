@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Alink from './../components/alink'
-import caret from './../assets/icons/caret.png'
-import './../css/greeting.css'
+import Glink from './glink' /* refactor to use this */
+import caret from './../../assets/icons/caret.png'
+import './../../css/navigation/greeting.css'
 
 class Greeting extends Component {
   constructor (props) {
