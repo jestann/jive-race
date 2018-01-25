@@ -12,8 +12,7 @@ class User extends Component {
       loadError: false,
       editPermission: false,
       deletePermission: false,
-      userViewed: {},
-      userBeingViewed: {
+      userData: {
         id: 1,
         name: "Ann", 
         bio: "I am the best runner.",
@@ -35,9 +34,9 @@ class User extends Component {
     
     let data = await this.props.fetcher.userShow(this.props.token, this.props.params.userId)
     if (data.success) {
-      this.setState({userBeingViewed: data.user, loading: false})
+      this.setState({userData: data.user, loading: false})
       console.log("user retrieved: ", data.user)
-      console.loog("state set: ", this.state.userBeingViewed)
+      console.loog("state set: ", this.state.userData)
       
     } else {
       this.setState({loading: false})
@@ -48,7 +47,7 @@ class User extends Component {
   
   handleDelete () {
     let confirmed = confirm("Are you sure you want to deactivate your account?")
-    if (confirmed && this.state.userBeingViewed.id === 1 /* this.props.user.id */) {
+    if (confirmed && this.state.userData.id === 1 /* this.props.user.id */) {
       // api call
       // redirect here, you deleted yourself.
       this.setState({loadError: true})

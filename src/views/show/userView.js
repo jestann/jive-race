@@ -1,26 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Title from './../components/title'
-import AttributeList from './../components/attributeList'
-import Attribute from './../components/attribute'
-import './../css/view.css'
+import Title from './../../components/atoms/title'
+import AttributeList from './../../components/atoms/attributeList'
+import Attribute from './../../components/atoms/attribute'
+import Loading from './../../components/atoms/loading'
+import './../css/views/view.css'
 
 function UserView (props) {
-  let title = 'User: ' + props.userBeingViewed.name
-  let racesList = props.userBeingViewed.races.map((race) => ({ content: race.name, link: "/race", postlink: (' in ' + race.year), long: false }))
-  let editPath = '/users/' + props.userBeingViewed.id + '/edit' // need to use in render
+  let title = 'User: ' + props.userData.name
+  let racesList = props.userData.races.map((race) => ({ content: race.name, link: "/race", postlink: (' in ' + race.year), long: false }))
+  let editPath = '/users/' + props.userData.id + '/edit' // need to use in render
   let editCss = props.editPermission ? 'show-button' : 'show-button hidden'
   let deleteCss = props.deletePermission ? 'show-button' : 'show-button hidden'
 
   if (props.loading) {
     return (
-      <div className="loading">Loading ... please wait.</div>
+      <Loading />
     )
   } else if (props.userInactivated) {
     return (
+      // go to home page, with this as a message.
       <div className="inactivated">This user has been deleted.</div>
     )
-  } else if (!props.user) {
+  } else if (!props.userData) {
+    // go to home page, with this as a message.
     return (
       <div className="failed-load">This user failed to load.</div>
     )
@@ -29,8 +32,8 @@ function UserView (props) {
       <div className="view">
         <Title title={title} />
         <div className='show'>
-          <Attribute label='Bio' content={props.userBeingViewed.bio} long={true} />
-          <Attribute label='Team' content={props.userBeingViewed.team} link='/team' long={false} />
+          <Attribute label='Bio' content={props.userData.bio} long={true} />
+          <Attribute label='Team' content={props.userData.team} link='/team' long={false} />
           <AttributeList header='Races' items={racesList} />
           <Attribute label='' content='Results' link='/results' long={false} />
           <Link className={editCss} to='/edit'>Edit Profile</Link>

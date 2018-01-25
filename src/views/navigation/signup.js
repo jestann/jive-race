@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import Container from './../components/container'
-import Form from './../components/form'
-import './../css/main.css'
+import Form from './../../components/forms/form'
+import './../../css/views/view.css'
 
 class Signup extends Component {
   constructor (props) {

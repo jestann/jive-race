@@ -1,11 +1,10 @@
 import React from 'react'
-import Form from './../components/form'
-import './../css/view.css'
+import Form from './../../components/forms/form'
+import './../../css/view.css'
 
 function LoginView (props) {
   return (
     <div className="view">
-      <Title title="Log In" />
       <Form 
         heading="Log in to Jive Race" 
         body="Enter your user credentials below."
