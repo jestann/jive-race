@@ -3,24 +3,28 @@ import Logo from './logo'
 import Greeting from './greeting'
 import Navlink from './navlink'
 
-import toggler from './../assets/icons/nav-toggler.png'
-import './../css/navbar.css'
+import toggler from './../../assets/icons/nav-toggler.png'
+import './../../css/navbar.css'
 
 class Navbar extends Component {
   constructor (props) {
     super(props)
+    this.state = { navMobileMenuCSS: "navbar-list mobile-list hidden" }
     this.toggleNav = this.toggleNav.bind(this)
-    this.state = { navCSS: "navbar-list mobile-list hidden" }
   }
   
+  // toggle navigation menu on mobile
   toggleNav () {
-    if (this.state.navCSS === "navbar-list mobile-list hidden") {
-      this.setState({ navCSS: "navbar-list mobile-list"})
+    if (this.state.navMobileMenuCSS === "navbar-list mobile-list hidden") {
+      this.setState({ navMobileMenuCSS: "navbar-list mobile-list"})
     } else {
-      this.setState({ navCSS: "navbar-list mobile-list hidden"})
+      this.setState({ navMobileMenuCSS: "navbar-list mobile-list hidden"})
     }
   }
 
+  // navigation bar with logo, greeting (authentication options), and navigation links (as both mobile menu and wide-screen spread)
+  // "navbar-spread" presents the wide-screen navigation spread
+  // "{this.state.navMobileMenuCSS}" toggles the mobile navigation menu
   render () {
     return (
       <div role="navigation">
@@ -38,7 +42,7 @@ class Navbar extends Component {
             <Navlink to="/" label="Home" />
           </div>
         </div>
-        <div className={this.state.navCSS}>
+        <div className={this.state.navMobileMenuCSS}>
           <div className="nav-separator"></div>
           <div className="nb-mobile-list-item"><Navlink to="/" label="Home" /></div>
           <div className="nb-mobile-list-item"><Navlink to="/register" label="Join" /></div>

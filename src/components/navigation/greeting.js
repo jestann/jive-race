@@ -1,23 +1,29 @@
 import React, { Component } from 'react'
-import Glink from './glink' /* refactor to use this */
+import Glink from './glink' /* need to use this? */
 import caret from './../../assets/icons/caret.png'
 import './../../css/navigation/greeting.css'
 
+/* Refactor Greeting to better use routing to toggle mobile options */
 class Greeting extends Component {
   constructor (props) {
     super(props)
     this.toggleGreeting = this.toggleGreeting.bind(this)
-    this.state = { greetingCSS: "greeting-list mobile-list hidden" }
+    this.state = { mobileMenuCSS: "greeting-list mobile-list hidden" }
   }
   
+  // toggle mobile menu for authentication options
   toggleGreeting () {
-    if (this.state.greetingCSS === "greeting-list mobile-list hidden") {
-      this.setState({ greetingCSS: "greeting-list mobile-list"})
+    if (this.state.mobileMenuCSS === "greeting-list mobile-list hidden") {
+      this.setState({ mobileMenuCSS: "greeting-list mobile-list"})
     } else {
-      this.setState({ greetingCSS: "greeting-list mobile-list hidden"})
+      this.setState({ mobileMenuCSS: "greeting-list mobile-list hidden"})
     }
   }
 
+  // User greeting with authentication options (as both mobile menu and wide-screen spread)
+  // "greeting-collapse" presents the wide-screen greeting and authentication options
+  // "greeting-dropdown" presents the mobile dropdown menu toggler
+  // "{this.state.mobileMenuCSS}" presents the mobile dropdown menu
   render () {
     let signupImg = 'https://png.icons8.com/signature/ultraviolet/24'
     let loginImg = 'https://png.icons8.com/lock/color/24'
@@ -32,9 +38,9 @@ class Greeting extends Component {
           </div>
           <div className="greeting-collapse">
             <div className="greeting-text">Welcome, {this.props.user.username}.</div>
-            <Alink label="Log Out" src={logoutImg} alt="" cssLabel="logout" onClick={this.props.logout} />
+            <Glink label="Log Out" src={logoutImg} alt="" cssLabel="logout" onClick={this.props.logout} />
           </div>
-          <div className={this.state.greetingCSS}>
+          <div className={this.state.mobileMenuCSS}>
             <div className="greeting-list-header">Welcome, {this.props.user.username}.</div>
             <div className="greeting-list-divider"></div>
             <div className="greeting-list-item" onClick={this.props.logout}>
@@ -54,10 +60,10 @@ class Greeting extends Component {
           </div>
           <div className="greeting-collapse">
             <div className="greeting-text">Welcome, Guest.</div>
-            <Alink label="Log In" src={loginImg} alt="" cssLabel="login" link="/login" />
-            <Alink label="Sign Up" src={signupImg} alt="" cssLabel="signup" link="/signup" />
+            <Glink label="Log In" src={loginImg} alt="" cssLabel="login" link="/login" />
+            <Glink label="Sign Up" src={signupImg} alt="" cssLabel="signup" link="/signup" />
           </div>
-          <div className={this.state.greetingCSS}>
+          <div className={this.state.mobileMenuCSS}>
             <div className="greeting-list-header">Welcome, Guest.</div>
             <div className="greeting-list-divider"></div>
             <div className="greeting-list-item">
