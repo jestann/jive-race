@@ -3,9 +3,9 @@ import { BrowserRouter } from 'react-router-dom'
 import './../css/main.css'
 
 import Fetcher from './../tools/fetcher'
-import Navbar from './navbar'
+import Navbar from './navigation/navbar'
 import Main from './main'
-import Footer from './footer'
+import Footer from './atoms/footer'
 
 class App extends Component {
   constructor (props) {

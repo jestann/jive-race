@@ -3,25 +3,24 @@ import { Route, Switch } from 'react-router-dom'
 import MessageBox from './navigation/messageBox'
 import './../css/main.css'
 
-import Home from './../views/home'
-import About from './../views/about'
-import Register from './../views/register'
-import CurrentRace from './../views/currentRace'
-import CurrentTeams from './../views/currentTeams'
-import Contact from './../views/contact'
+import Home from './../views/core/home'
+import About from './../views/core/about'
+import Register from './../views/core/register'
+import CurrentRace from './../views/core/currentRace'
+import CurrentTeams from './../views/core/currentTeams'
+import Contact from './../views/core/contact'
 
-import Signup from './../views/signup'
-import Login from './../views/login'
+import Signup from './../views/navigation/signup'
+import Login from './../views/navigation/login'
 
-import Edit from './../views/edit'
+import Edit from './../views/edit/edit'
 
-import Results from './../views/results'
+import User from './../views/show/user'
+import Race from './../views/show/race'
+import Team from './../views/show/team'
+import Result from './../views/show/result'
 
-import User from './../views/user'
-import Race from './../views/race'
-import Team from './../views/team'
-import Result from './../views/result'
-
+import Results from './../views/show/results'
 
 class Main extends Component {
   render () {
