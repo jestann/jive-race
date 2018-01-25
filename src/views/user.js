@@ -6,12 +6,12 @@ import './../css/main.css'
 class User extends Component {
   constructor (props) {
     super(props)
-    
     this.state = {
       loading: false,
+      userInactivated: false,
+      loadError: false,
       editPermission: false,
       deletePermission: false,
-      userInactivated: false,
       userViewed: {},
       userBeingViewed: {
         id: 1,
@@ -25,7 +25,25 @@ class User extends Component {
         ]
       }
     }
+    
+    this.getUserData = this.getUserData.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
+  }
+  
+  async getUserData () {
+    this.setState({loading: true})
+    
+    let data = await this.props.fetcher.userShow(this.props.token, this.props.params.userId)
+    if (data.success) {
+      this.setState({userBeingViewed: data.user, loading: false})
+      console.log("user retrieved: ", data.user)
+      console.loog("state set: ", this.state.userBeingViewed)
+      
+    } else {
+      this.setState({loading: false})
+      this.props.sendMessage(data.message /* this.message ? */, true)
+    }
+    
   }
   
   handleDelete () {
@@ -33,6 +51,7 @@ class User extends Component {
     if (confirmed && this.state.userBeingViewed.id === 1 /* this.props.user.id */) {
       // api call
       // redirect here, you deleted yourself.
+      this.setState({loadError: true})
     } else {
       // api call
       this.setState({userInactivated: true})

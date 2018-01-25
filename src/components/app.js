@@ -16,7 +16,7 @@ class App extends Component {
       loggedIn: fetcher.loggedIn,
       token: fetcher.token,
       user: fetcher.user,
-      dat: fetcher.data,
+      data: fetcher.data,
       isError: fetcher.isError,
       message: fetcher.message,
       messageVisible: fetcher.messageVisible

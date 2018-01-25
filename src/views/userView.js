@@ -20,6 +20,10 @@ function UserView (props) {
     return (
       <div className="inactivated">This user has been deleted.</div>
     )
+  } else if (!props.user) {
+    return (
+      <div className="failed-load">This user failed to load.</div>
+    )
   } else {
     return (
       <div className="container">
