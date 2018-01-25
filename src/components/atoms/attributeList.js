@@ -5,7 +5,7 @@ import './../../css/atoms/attribute.css'
 const AttributeList = (props) => {
   let items = props.items.map((item, i) => ( 
     <Attribute 
-      keyed={i}
+      keyed={i} // a list's items are keyed
       content={item.content} // label not used in a list
       link={item.link}
       postlink={item.postlink}
