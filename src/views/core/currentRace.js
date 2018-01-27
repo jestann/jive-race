@@ -1,15 +1,8 @@
-import React, { Component } from 'react'
-import Container from './../components/container'
-import './../css/main.css'
+import React from 'react'
+import './../../css/views/view.css'
 
-import content from './../content/about'
-
-class CurrentRace extends Component {
-  render () {
-    return (
-      <Container title="Race 2018" markdown={content} cssLabel="current-race" {...this.props} />
-    )
-  }
+const CurrentRace = (props) => {
+  <div className="current-race">Let's talk about this year's race.</div>
 }
 
 export default CurrentRace

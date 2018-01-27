@@ -6,6 +6,9 @@ toDo.md
 # generated css files from sass
 /src/css
 
+# draft components
+/src/delete
+
 # zipped build files for deployment
 jive-deployment.zip
 

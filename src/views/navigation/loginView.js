@@ -1,6 +1,6 @@
 import React from 'react'
 import Form from './../../components/forms/form'
-import './../../css/view.css'
+import './../../css/views/view.css'
 
 function LoginView (props) {
   return (

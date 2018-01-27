@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from './../../assets/icons/running-team.png'
-import './../../css/logo.css'
+import './../../css/navigation/logo.css'
 
 const Logo = (props) => {
   <div className="logo">

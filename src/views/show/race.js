@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-
-import Container from './../components/container'
-import AttributeList from './../components/attributeList'
-import Attribute from './../components/attribute'
-
-import './../css/main.css'
+import Title from './../../components/atoms/title'
+import AttributeList from './../../components/atoms/attributeList'
+import Attribute from './../../components/atoms/attribute'
+import './../../css/views/view.css'
 
 class Race extends Component {
   constructor (props) {
@@ -37,13 +35,14 @@ class Race extends Component {
   render () {
     let title = 'Race: ' + this.state.name
     let teamsList = this.state.teams.map((team) => ({ content: team.name, link: "/team", postlink: (' | ' + team.body), long: false }))
-    let runnersList = this.state.runners.map((runner) => ({ content: runner.name, link: "/user", postlink: (', age ' + runner.age), long: false }))
+    let runnersList = this.state.runners.map((runner) => ({ content: runner.name, link: "/user/id", postlink: (', age ' + runner.age), long: false }))
     
     let editCss = 'show-button' + this.state.editCss
     let deleteCss = 'show-button' + this.state.deleteCss
     
-    let content = (
+    return (
       <div className='show'>
+        <Title title={title} />
         <Attribute label='Year' content={this.state.year} long={false} />
         <Attribute label='Date' content={this.state.date} long={false} />
         <Attribute label='Why?' content={this.state.body} long={true} />
@@ -53,10 +52,6 @@ class Race extends Component {
         <Link className={editCss} to='/edit'>Edit Race</Link>
         <Link className={deleteCss} to='/' onClick={this.handleDelete}>Delete Race</Link>
       </div>
-    )
-
-    return (
-      <Container title={title} content={content} cssLabel="race" {...this.props} />
     )
   }
 }

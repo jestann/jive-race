@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Container from './../components/container'
-import AttributeList from './../components/attributeList'
-import Attribute from './../components/attribute'
-import './../css/main.css'
+import Title from './../../components/atoms/title'
+import AttributeList from './../../components/atoms/attributeList'
+import Attribute from './../../components/atoms/attribute'
+import './../../css/views/view.css'
 
 class Results extends Component {
   constructor (props) {
@@ -22,16 +22,13 @@ class Results extends Component {
     let title = 'Results for Team ' + this.state.team
     let resultsList = this.state.results.map((result) => ({ content: (result.runner + ': ' + result.time), link: "/result", long: false }))
 
-    let content = (
+    return (
       <div className='show'>
+        <Title title={title} />
         <Attribute label='Race' content={this.state.race} link='/race' long={false} />
         <AttributeList header='Results' items={resultsList} />
         <Attribute label='' content='Back to Team' link='/team' long={false} />
       </div>
-    )
-
-    return (
-      <Container title={title} content={content} cssLabel="results" {...this.props} />
     )
   }
 }

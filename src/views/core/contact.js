@@ -1,24 +1,17 @@
-import React, { Component } from 'react'
-import Container from './../components/container'
-import Form from './../components/form'
-import './../css/main.css'
+import React from 'react'
+import Form from './../../components/forms/form'
+import './../../css/views/view.css'
 
-class Contact extends Component {
-  render () {
-    let content = <Form 
-      heading="Contact Us" 
-      body="Have something you want to say? We're here to listen."
-      formboxes={[
-        { label: "name", type: "text", placeholder: "name" },
-        { label: "email", type: "text", placeholder: "email" },
-        { label: "body", type: "textarea", placeholder: "Let us know what you're thinking." }, 
-      ]}
-    />
-    
-    return (
-      <Container title="Contact" content={content} cssLabel="contact" {...this.props} />
-    )
-  }
+const Contact = (props) => {
+  <Form 
+    heading="Contact Us" 
+    body="Have something you want to say? We're here to listen."
+    formboxes={[
+      { label: "name", type: "text", placeholder: "name" },
+      { label: "email", type: "text", placeholder: "email" },
+      { label: "body", type: "textarea", placeholder: "Let us know what you're thinking." }, 
+    ]}
+  />
 }
 
 export default Contact

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Container from './../components/container'
-import TeamSmall from './../components/teamSmall'
-import './../css/teams.css'
+import Title from './../../components/atoms/title'
+import TeamSmall from './../../components/teamSmall'
+import './../../css/views/teams.css'
 
 class CurrentTeams extends Component {
   constructor (props) {
@@ -32,10 +32,12 @@ class CurrentTeams extends Component {
       <TeamSmall name={team.name} body={team.body} key={i} joined={this.state.joined === i} handleDelete={() => this.handleDelete(i)} handleJoin={() => this.handleJoin(i)} />
     )
     let joined = (this.state.joined !== false) ? "joined: " + this.state.teams[this.state.joined].name : "Haven't joined a team yet."
-    let content = <div>{teams}<div className="joined">{joined}</div></div>
-    
     return (
-      <Container title="Teams" content={content} cssLabel="teams" {...this.props} />
+      <div className="current-teams">
+        <Title title="Teams" />
+        <div className="teams">{teams}</div>
+        <div className="joined">{joined}</div>
+      </div>
     )
   }
 }

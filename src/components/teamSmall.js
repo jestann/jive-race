@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import Button from './atoms/button'
-import './../../css/teams.css'
+import './../css/views/teams.css'
 
 /* Refactor this and all interactive team functionality */
 const TeamSmall = (props) => {

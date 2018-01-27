@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import UserView from './../views/userView'
-import Fetcher from './../tools/fetcher'
+import UserView from './../views/show/userView'
 
 class User extends Component {
   constructor (props) {
@@ -45,7 +44,7 @@ class User extends Component {
   }
   
   handleDelete () {
-    let confirmed = confirm("Are you sure you want to deactivate your account?")
+    let confirmed = prompt("Are you sure you want to deactivate your account?")
     if (confirmed && this.state.userData.id === 1 /* this.props.user.id */) {
       // api call
       // redirect here, you deleted yourself.
@@ -57,7 +56,7 @@ class User extends Component {
   }
   
   render () {
-    <UserView {...this.state} handleDelete={this.handleDelete} />
+    return <UserView {...this.state} handleDelete={this.handleDelete} />
   }
 }
 

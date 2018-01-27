@@ -9,7 +9,7 @@ import './../../css/views/view.css'
 function UserView (props) {
   let title = 'User: ' + props.userData.name
   let racesList = props.userData.races.map((race) => ({ content: race.name, link: "/race", postlink: (' in ' + race.year), long: false }))
-  let editPath = '/users/' + props.userData.id + '/edit' // need to use in render
+  // let editPath = '/users/' + props.userData.id + '/edit' // need to use in render
   let editCss = props.editPermission ? 'show-button' : 'show-button hidden'
   let deleteCss = props.deletePermission ? 'show-button' : 'show-button hidden'
 

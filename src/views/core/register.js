@@ -1,24 +1,17 @@
-import React, { Component } from 'react'
-import Container from './../components/container'
-import Form from './../components/form'
-import './../css/main.css'
+import React from 'react'
+import Form from './../../components/forms/form'
+import './../../css/main/main.css'
 
-class Register extends Component {
-  render () {
-    let content = <Form 
-      heading="Registration" 
-      body="Fill in your data below to register for this year's race."
-      formboxes={[
-        { label: "name", type: "text", placeholder: "name" },
-        { label: "bio", type: "textarea", placeholder: "Talk about yourself here." }, 
-        { label: "age", type: "text", placeholder: "age" }
-      ]}
-    />
-    
-    return (
-      <Container title="Register" content={content} cssLabel="register" {...this.props} />
-    )
-  }
+const Register = (props) => {
+  <Form 
+    heading="Register for Race 2018" 
+    body="Fill in your data below to register for this year's race."
+    formboxes={[
+      { label: "name", type: "text", placeholder: "name" },
+      { label: "bio", type: "textarea", placeholder: "Talk about yourself here." }, 
+      { label: "age", type: "text", placeholder: "age" }
+    ]}
+  />
 }
 
 export default Register
