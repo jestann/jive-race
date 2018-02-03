@@ -15,7 +15,7 @@ class FormBox extends Component {
   
   render () {
     let cssLabel = 'input ' + this.props.type
-    // does it need an HTML input or an HTML textarea?
+    // does it need to be an HTML input or an HTML textarea?
     let inputBox = ''
     if (this.props.type === "textarea") {
       inputBox = <textarea className={cssLabel} placeholder={this.props.placeholder} onChange={this.handleChange} />
