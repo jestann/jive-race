@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom'
 // import { NavLink } from 'reactstrap';
 import './../../css/navlink.css'
 
-const Navlink = (props) => {
+const Navlink = (props) => (
   <NavLink {...props} exact className='navlink'>
-    {this.props.label}
+    {props.label}
   </NavLink>
-}
+)
 
 export default Navlink
 
