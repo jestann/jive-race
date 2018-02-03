@@ -11,6 +11,7 @@ class Signup extends Component {
     if (labelsArray && valuesArray) {
       let submission = {}
       labelsArray.forEach((label, i) => { submission[label] = valuesArray[i] })
+      console.log(submission)
       let data = await this.props.fetcher.authRegister(submission.email, submission.username, submission.password)
       console.log(data)
       if (!data.success) { this.props.sendMessage(data.message, !data.success) }
