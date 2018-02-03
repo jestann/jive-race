@@ -2,7 +2,7 @@ import React from 'react'
 import Form from './../../components/forms/form'
 import './../../css/views/view.css'
 
-const Contact = (props) => {
+const Contact = (props) => (
   <Form 
     heading="Contact Us" 
     body="Have something you want to say? We're here to listen."
@@ -12,6 +12,6 @@ const Contact = (props) => {
       { label: "body", type: "textarea", placeholder: "Let us know what you're thinking." }, 
     ]}
   />
-}
+)
 
 export default Contact

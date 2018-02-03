@@ -2,7 +2,7 @@ import React from 'react'
 import Form from './../../components/forms/form'
 import './../../css/main/main.css'
 
-const Register = (props) => {
+const Register = (props) => (
   <Form 
     heading="Register for Race 2018" 
     body="Fill in your data below to register for this year's race."
@@ -12,6 +12,6 @@ const Register = (props) => {
       { label: "age", type: "text", placeholder: "age" }
     ]}
   />
-}
+)
 
 export default Register

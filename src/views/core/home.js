@@ -11,7 +11,7 @@ import pretty from './../../assets/images/pretty.jpg'
 import together from './../../assets/images/together.jpg'
 import './../../css/views/home.css'
 
-const Home = (props) => {
+const Home = (props) => (
   <section className="home">
     <img className="title-img" src={starting} alt="the starting line" />
     <div className="content top-section">
@@ -73,7 +73,7 @@ const Home = (props) => {
       </Row>
     </div>
   </section>
-}
+)
 
 export default Home
 
