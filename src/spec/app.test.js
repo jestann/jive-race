@@ -1,29 +1,19 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './../components/app'
-
-it('renders without crashing', () => {
-  const div = document.createElement('div')
-  ReactDOM.render(<App />, div)
-})
-
-/*
-describe('App', () => {
-    it('should be able to run tests', () => {
-        expect(1 + 2).toEqual(3);
-    });
-});
-*/
-
-/*
-// use enzyme for shallow rendering
-
+import { expect } from 'jest'
 import { shallow } from 'enzyme'
+import App from './../components/app'
 
 it('renders without crashing', () => {
   shallow(<App />)
 })
 
+
+it('should be able to run tests', () => {
+    expect(1 + 2).toEqual(3)
+})
+
+
+/*
 it('renders welcome message', () => {
   const wrapper = shallow(<App />)
   const welcome = <h2>Welcome to React</h2>
