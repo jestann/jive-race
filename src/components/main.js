@@ -1,5 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import Fetcher from './../tools/fetcher'
 import MessageBox from './navigation/messageBox'
 import './../css/main.css'
 
@@ -45,5 +47,21 @@ const Main = (props) => (
     </Switch>
   </div>
 )
+
+Main.propTypes = {
+  fetcher: PropTypes.instanceOf(Fetcher),
+  loggedIn: PropTypes.bool,
+  token: PropTypes.string,
+  user: PropTypes.object,
+  data: PropTypes.object,
+  message: PropTypes.string,
+  messageVisible: PropTypes.bool,
+  isError: PropTypes.bool,
+  handleMessage: PropTypes.func.isRequired,
+  sendMessage: PropTypes.func.isRequired,
+  signup: PropTypes.func.isRequired,
+  login: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired
+}
 
 export default Main

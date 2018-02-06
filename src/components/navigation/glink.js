@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import './../../css/navigation/glink.css'
 
 /* Links for the Greeting Bar in the Navbar */
@@ -24,6 +25,15 @@ const Glink = (props) => {
       </span>
     )
   }
+}
+
+Glink.propTypes = {
+  cssLabel: PropTypes.string, // to set styling
+  src: PropTypes.string, // img
+  alt: PropTypes.string, // img
+  label: PropTypes.string.isRequired, // text
+  link: PropTypes.string, // for a link instead of an action
+  onClick: PropTypes.func // for an action instead of a link
 }
 
 export default Glink

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Row, Col } from 'reactstrap'
 import FormBox from './formBox'
 import Button from './../atoms/button'
@@ -63,6 +64,13 @@ class Form extends Component {
       </div>
     )
   }
+}
+
+Form.propTypes = {
+  heading: PropTypes.string.isRequired,
+  body: PropTypes.string,
+  formBoxes: PropTypes.arrayOf(PropTypes.object).isRequired,
+  handleSubmit: PropTypes.func.isRequired
 }
 
 export default Form

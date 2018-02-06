@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import './../../css/forms/form.css'
 
 class FormBox extends Component {
@@ -30,6 +31,13 @@ class FormBox extends Component {
       </div>
     )
   }
+}
+
+FormBox.propTypes = {
+  label: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  type: PropTypes.oneOf(['text', 'number', 'textarea']),
+  onChange: PropTypes.func.isRequired
 }
 
 export default FormBox

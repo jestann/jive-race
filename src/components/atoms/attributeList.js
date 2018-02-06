@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Attribute from './attribute'
 import './../../css/atoms/attribute.css'
 
@@ -18,6 +19,11 @@ const AttributeList = (props) => {
       <div className='attribute-list'>{items}</div>
     </div>
   )
+}
+
+AttributeList.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  header: PropTypes.string.isRequired
 }
 
 export default AttributeList

@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import './../../css/atoms/attribute.css'
 
 const Attribute = (props) => {
   
-  // an attribute could include these props: label, content, link, postlink, key (for a list), long (boolean),
+  // an attribute could include these props: label, content, link, postlink, keyed (for a list), long (boolean),
   let postlink = props.postlink ? props.postlink : ''
   let mainCssLabel = 'no-style'
   let attributeLabel = ''
@@ -44,6 +45,15 @@ const Attribute = (props) => {
       {attribute}
     </div>
   )
+}
+
+Attribute.propTypes = {
+  label: PropTypes.string, // not used in a list
+  content: PropTypes.string.isRequired,
+  link: PropTypes.string,
+  postLink: PropTypes.string,
+  keyed: PropTypes.number, // only used in a list
+  long: PropTypes.bool // only used if long
 }
 
 export default Attribute

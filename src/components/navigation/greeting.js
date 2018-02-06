@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Glink from './glink' /* need to use this? */
 import caret from './../../assets/icons/caret.png'
 import './../../css/navigation/greeting.css'
@@ -77,6 +78,12 @@ class Greeting extends Component {
       )
     }
   }
+}
+
+Greeting.propTypes = {
+  loggedIn: PropTypes.bool.isRequired,
+  user: PropTypes.object, // is required, but can also be null, so not listed as isRequired
+  logout: PropTypes.func.isRequired
 }
 
 export default Greeting

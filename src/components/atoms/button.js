@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import './../../css/atoms/button.css'
 
 const Button = (props) => {
@@ -21,6 +22,15 @@ const Button = (props) => {
       </div>
     )
   }
+}
+
+Button.propTypes = {
+  cssLabel: PropTypes.string, // to set styling
+  src: PropTypes.string, // for image
+  alt: PropTypes.string, // for image
+  label: PropTypes.string, // for text
+  link: PropTypes.string, // for a link instead of an action
+  onClick: PropTypes.func // for an action instead of a link
 }
 
 export default Button

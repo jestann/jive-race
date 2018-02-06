@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Logo from './logo'
 import Greeting from './greeting'
 import Navlink from './navlink'
@@ -29,7 +30,7 @@ class Navbar extends Component {
     return (
       <div role="navigation">
         <div className="navbar-custom">
-          <Logo {...this.props} />
+          <Logo />
           <Greeting {...this.props} toggleGreeting={this.toggleGreeting} greetingCSS={this.state.greetingCSS} />
           <div className="navbar-toggler" onClick={this.toggleNav}>
             <img className="nb-toggler-img" alt="Toggle Navigation" src={toggler} />
@@ -53,6 +54,13 @@ class Navbar extends Component {
       </div>
     )
   }
+}
+
+Navbar.propTypes = {
+  // this component only passes props through from App to Greeting, as listed below ... should they be listed below or is this double-testing?
+  loggedIn: PropTypes.bool.isRequired,
+  user: PropTypes.object, // is required, but can also be null, so not listed as isRequired
+  logout: PropTypes.func.isRequired
 }
 
 export default Navbar
