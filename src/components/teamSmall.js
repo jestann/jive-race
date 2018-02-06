@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import Button from './atoms/button'
 import './../css/views/teams.css'
 
@@ -15,6 +16,14 @@ const TeamSmall = (props) => {
       <Button label="Delete Team" onClick={props.handleDelete} />
     </div>
   )
+}
+
+TeamSmall.propTypes = {
+  name: PropTypes.string.isRequired,
+  body: PropTypes.string, // not sure if required
+  joined: PropTypes.bool.isRequired,
+  handleJoin: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired
 }
 
 export default TeamSmall

@@ -57,7 +57,7 @@ class Navbar extends Component {
 }
 
 Navbar.propTypes = {
-  // this component only passes props through from App to Greeting, as listed below ... should they be listed below or is this double-testing?
+  // this component only passes props through from App to Greeting, as listed below
   loggedIn: PropTypes.bool.isRequired,
   user: PropTypes.object, // is required, but can also be null, so not listed as isRequired
   logout: PropTypes.func.isRequired

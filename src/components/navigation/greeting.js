@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import Glink from './glink' /* need to use this? */
 import caret from './../../assets/icons/caret.png'
@@ -68,10 +69,10 @@ class Greeting extends Component {
             <div className="greeting-list-header">Welcome, Guest.</div>
             <div className="greeting-list-divider"></div>
             <div className="greeting-list-item">
-              <a href="/signup"><img className="greeting-list-img" src={signupImg} alt="" />Sign Up</a>
+              <Link to="/signup"><img className="greeting-list-img" src={signupImg} alt="" />Sign Up</Link>
             </div>
             <div className="greeting-list-item">
-              <a href="/login"><img className="greeting-list-img" src={loginImg} alt="" />Log In</a>
+              <Link to="/login"><img className="greeting-list-img" src={loginImg} alt="" />Log In</Link>
             </div>
           </div>
         </div>
