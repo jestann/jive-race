@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Form from './../../components/forms/form'
 import './../../css/views/view.css'
 
@@ -14,5 +15,9 @@ const SignupView = (props) => (
       handleSubmit={props.signup}
     />
 )
+
+SignupView.propTypes = {
+  signup: PropTypes.func.isRequired
+}
 
 export default SignupView

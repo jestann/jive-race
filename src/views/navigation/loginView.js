@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Form from './../../components/forms/form'
 import './../../css/views/view.css'
 
@@ -15,5 +16,9 @@ const LoginView = (props) => (
     />
   </div>
 )
+
+LoginView.propTypes = {
+  login: PropTypes.func.isRequired
+}
 
 export default LoginView
