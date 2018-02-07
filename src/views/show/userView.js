@@ -46,7 +46,22 @@ function UserView (props) {
 }
 
 UserView.propTypes = {
-  
+  loading: PropTypes.bool.isRequired,
+  loadError: PropTypes.bool.isRequired,
+  userData: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    bio: PropTypes.string,
+    team: PropTypes.string,
+    races: PropTypes.shape({
+      name: PropTypes.string,
+      year: PropTypes.number
+    }), // userData is requierd but can be null so not listed as isRequired
+  }),
+  userInactivated: PropTypes.bool.isRequired,
+  editPermission: PropTypes.bool.isRequired,
+  deletePermission: PropTypes.bool.isRequired,
+  handleDelete: PropTypes.func.isRequired
 }
 
 export default UserView

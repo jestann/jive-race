@@ -66,6 +66,9 @@ class User extends Component {
 User.propTypes = {
   fetcher: PropTypes.instanceOf(Fetcher),
   token: PropTypes.string, // is required but can be null so not listed as isRequired
+  params: React.PropTypes.shape({
+    id: React.PropTypes.string // can params be required? how will this impact
+  }),
   sendMessage: PropTypes.func.isRequired
 }
 
