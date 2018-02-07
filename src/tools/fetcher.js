@@ -39,7 +39,7 @@ class Fetcher {
             
             // save if received a token or current user back
             if (data.token) { data.action = "ADD_TOKEN" }
-            if (data.currentUser) { this.user = "CURRENT_USER" }
+            if (data.currentUser) { data.action = "CURRENT_USER" }
             if (data.message) { 
                 this.message = data.message
                 this.messageVisible = true
