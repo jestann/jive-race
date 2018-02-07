@@ -40,4 +40,6 @@ class Result extends Component {
   }
 }
 
+// no props passed at present
+
 export default Result

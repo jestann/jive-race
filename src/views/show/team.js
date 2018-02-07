@@ -48,4 +48,6 @@ class Team extends Component {
   }
 }
 
+// no props passed at present
+
 export default Team

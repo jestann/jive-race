@@ -56,4 +56,6 @@ class Race extends Component {
   }
 }
 
+// no props passed at present
+
 export default Race

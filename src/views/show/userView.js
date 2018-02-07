@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import Title from './../../components/atoms/title'
 import AttributeList from './../../components/atoms/attributeList'
@@ -42,6 +43,10 @@ function UserView (props) {
       </div>
     )
   }
+}
+
+UserView.propTypes = {
+  
 }
 
 export default UserView
