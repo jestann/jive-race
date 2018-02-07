@@ -2,7 +2,7 @@ import React from 'react'
 import Form from './../../components/forms/form'
 import './../../css/views/view.css'
 
-const Edit = (props) => (
+const Edit = () => (
   <Form 
     heading="Edit Something" 
     body="This is standing in to edit things."
@@ -13,5 +13,7 @@ const Edit = (props) => (
     ]}
   />
 )
+
+// no props passed at present
 
 export default Edit
