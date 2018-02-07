@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Title from './../../components/atoms/title'
 import TeamSmall from './../../components/teamSmall'
 import './../../css/views/teams.css'
@@ -40,6 +41,10 @@ class CurrentTeams extends Component {
       </div>
     )
   }
+}
+
+CurrentTeams.propTypes = {
+  // no props passed at present
 }
 
 export default CurrentTeams

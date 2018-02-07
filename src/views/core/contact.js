@@ -2,7 +2,7 @@ import React from 'react'
 import Form from './../../components/forms/form'
 import './../../css/views/view.css'
 
-const Contact = (props) => (
+const Contact = () => (
   <Form 
     heading="Contact Us" 
     body="Have something you want to say? We're here to listen."
@@ -13,5 +13,7 @@ const Contact = (props) => (
     ]}
   />
 )
+
+// no props passed at present
 
 export default Contact
