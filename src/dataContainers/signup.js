@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import Fetcher from './../tools/fetcher'
 import SignupView from './../views/navigation/signupView'
 
 class Signup extends Component {
@@ -25,6 +27,12 @@ class Signup extends Component {
   render () {
     return <SignupView {...this.props} signup={this.signup} />
   }
+}
+
+Signup.propTypes = {
+  fetcher: PropTypes.instanceOf(Fetcher).isRequired,
+  sendMessage: PropTypes.func.isRequired,
+  signup: PropTypes.func.isRequired
 }
 
 export default Signup

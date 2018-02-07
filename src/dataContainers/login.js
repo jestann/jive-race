@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import Fetcher from './../tools/fetcher'
 import LoginView from './../views/navigation/loginView'
 
 class Login extends Component {
@@ -21,8 +23,14 @@ class Login extends Component {
   }
   
   render () {
-    return <LoginView {...this.props} login={this.login} />
+    return <LoginView login={this.login} />
   }
+}
+
+Login.propTypes = {
+  fetcher: PropTypes.instanceOf(Fetcher).isRequired,
+  sendMessage: PropTypes.func.isRequired,
+  login: PropTypes.func.isRequired
 }
 
 export default Login

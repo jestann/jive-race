@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import Fetcher from './../../tools/fetcher'
 import UserView from './../views/show/userView'
 
 class User extends Component {
@@ -58,6 +60,13 @@ class User extends Component {
   render () {
     return <UserView {...this.state} handleDelete={this.handleDelete} />
   }
+}
+
+// what about params?
+User.propTypes = {
+  fetcher: PropTypes.instanceOf(Fetcher),
+  token: PropTypes.string, // is required but can be null so not listed as isRequired
+  sendMessage: PropTypes.func.isRequired
 }
 
 export default User
