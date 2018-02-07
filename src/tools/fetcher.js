@@ -1,9 +1,9 @@
 // Singleton class for fetching data from Jive Race API
 
 class Fetcher {
+    // don't need to store this data in the fetcher class; store in redux store
     constructor () {
-        this.url = 'https://jive-race-api.herokuapp.com'
-        this.loggedIn = true
+        this.url = 'https://jive-race-api.herokuapp.com' // unchanged
         this.token = null
         this.user = null
         this.isError = false
@@ -38,15 +38,14 @@ class Fetcher {
             if (!data.success) { throw data }
             
             // save if received a token or current user back
-            if (data.token) { this.token = data.token }
-            if (data.currentUser) { this.user = data.currentUser }
+            if (data.token) { data.action = "ADD_TOKEN" }
+            if (data.currentUser) { this.user = "CURRENT_USER" }
             if (data.message) { 
                 this.message = data.message
                 this.messageVisible = true
             }
             this.isError = false
-            this.data = data
-            return data // { success: true, code: 200, currentUser: {currentUser}, data: (data), message: "message" }
+            return data // { success: true, code: 200, token: token, currentUser: {currentUser}, data: (data), message: "message" }
             
         } catch (error) { 
             this.data = this.makeErr(error)
@@ -63,14 +62,14 @@ class Fetcher {
   
     async authRegister (email, username, password) {
         let data = await this.fetchIt('/auth/register', 'POST', undefined, { email: email, username: username, password: password })
-        if (data.success) { this.loggedIn = true }
-        return data // { currentUser: {new user}, token: (token), message: "registered" }
+        if (data.success) { data.loggedIn = true }
+        return data // { currentUser: {new user}, token: (token), message: "registered", loggedIn: boolean }
     }
   
     async login (username, password) {
         let data = await this.fetchIt('/auth/login', 'PUT', undefined, { username: username, password: password })
-        if (data.success) { this.loggedIn = true }
-        return data // { currentUser: {logged in user}, token: (token), message: "logged in" }
+        if (data.success) { data.loggedIn = true }
+        return data // { currentUser: {logged in user}, token: (token), message: "logged in", loggedIn: boolean }
     }
   
     async logout () {
@@ -78,10 +77,9 @@ class Fetcher {
         let data = await this.fetchIt('/auth/logout', 'PUT')
         return data // { message: "logged out" } -- route under construction, throws an error
         */
-        this.data = { success: true, code: 200, message: "Successfully logged out." }
+        this.data = { success: true, code: 200, loggedIn: false, message: "Successfully logged out." }
         this.token = null
         this.user = null
-        this.loggedIn = false
         this.message = this.data.message
         this.messageVisible = true
         this.isError = false
