@@ -40,18 +40,12 @@ class Fetcher {
             // save if received a token or current user back
             if (data.token) { data.action = "ADD_TOKEN" }
             if (data.currentUser) { data.action = "CURRENT_USER" }
-            if (data.message) { 
-                this.message = data.message
-                this.messageVisible = true
-            }
-            this.isError = false
+            if (data.message) { data.action = "SEND_MESSAGE" }
             return data // { success: true, code: 200, token: token, currentUser: {currentUser}, data: (data), message: "message" }
             
         } catch (error) { 
             this.data = this.makeErr(error)
-            this.message = error.message
-            this.messageVisible = true
-            this.isError = true
+            this.data.action = "SEND_ERROR"
             return this.data // { success: false, code: (code), message: "error" }
         }
     }
