@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Fetcher from './../../tools/fetcher'
+import Fetcher from './../tools/fetcher'
 import UserView from './../views/show/userView'
 
 class User extends Component {
