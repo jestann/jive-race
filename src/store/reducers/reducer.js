@@ -1,3 +1,4 @@
+/*
 import Fetcher from './../../tools/fetcher'
 const fetcher = new Fetcher()
 
