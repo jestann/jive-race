@@ -38,15 +38,17 @@ class Fetcher {
             if (!data.success) { throw data }
             
             // save if received a token or current user back
-            if (data.token) { data.action = "ADD_TOKEN" }
-            if (data.currentUser) { data.action = "CURRENT_USER" }
-            if (data.message) { data.action = "SEND_MESSAGE" }
-            return data // { success: true, code: 200, token: token, currentUser: {currentUser}, data: (data), message: "message" }
+            data.action = []
+            if (data.token) { data.action.push("ADD_TOKEN") }
+            if (data.currentUser) { data.action.push("CURRENT_USER") }
+            if (data.message) { data.action.push("SEND_MESSAGE") }
+            return data // { success: true, code: 200, action: [ ... ], token: token, currentUser: {currentUser}, data: (data), message: "message" }
             
-        } catch (error) { 
-            this.data = this.makeErr(error)
-            this.data.action = "SEND_ERROR"
-            return this.data // { success: false, code: (code), message: "error" }
+        /* This could return internal errors to the user ... directly returning a catch statement */
+        } catch (error) {
+            let data = this.makeErr(error)
+            data.action = [].push("SEND_ERROR")
+            return data // { success: false, code: (code), action: ["SEND_ERROR"], message: "error" }
         }
     }
 
