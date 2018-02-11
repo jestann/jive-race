@@ -58,9 +58,9 @@ class Navbar extends Component {
 
 Navbar.propTypes = {
   // this component only passes props through from App to Greeting, as listed below
-  loggedIn: PropTypes.bool.isRequired,
+  loggedIn: PropTypes.bool, // is required
   user: PropTypes.object, // is required, but can also be null, so not listed as isRequired
-  logout: PropTypes.func.isRequired
+  logout: PropTypes.func // is required
 }
 
 export default Navbar
