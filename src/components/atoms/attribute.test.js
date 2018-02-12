@@ -19,14 +19,26 @@ describe('general attribute', () => {
 	})
 })
 
-describe ('attribute in an attribute list', () => {
-	let wrapper = shallow(<Attribute content='test' link='link' keyed='1' />)
+describe ('attribute in a list', () => {
+	const wrapper = shallow(<Attribute content='test' keyed='1' />)
 	
 	it('renders a content div', () => {
 		
 	})
 	
-	it('')
+	it('renders a content link', () => {
+		wrapper.setProps({ link: '/link' })
+
+	})
+	
+	it('renders a postlink', () => {
+		wrapper.setProps({ postlink: ', plus more' })
+
+	})
+	
+	it('renders a long attribute', () => {
+		
+	})
 })
 
 describe ('solo attribute with a link and a postlink', () => {
