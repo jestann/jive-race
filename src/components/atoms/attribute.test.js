@@ -1,6 +1,8 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { Link } from 'react-router-dom'
+import { shallow } from 'enzyme'
 import Attribute from './../components/atoms/attribute'
+/* global expect */
 
 describe('general attribute', () => {
 	it('renders without crashing', () => {
@@ -8,27 +10,44 @@ describe('general attribute', () => {
 	})
 	
 	it('receives all its props', () => {
-		let wrapper = shallow(<Attribute content='test' />)
-		expect(wrapper.props().test).toEqual('test')
+		let wrapper = shallow(<Attribute content='test' label='label' link='/link' postlink=', and more' keyed={1} long={true} />)
+		let props = {
+			content: 'test',
+			label: 'label',
+			link: '/link',
+			postlink: ', and more',
+			keyed: 1,
+			long: true
+		}
+		expect(wrapper.props()).toEqual(props)
 	})
 	
-	it('renders its content prop', () => {
+	it('always renders a content div', () => {
 		let wrapper = shallow(<Attribute content='test' />)
 		let content = <div className='attribute-short'>test</div>
-		expect(wrapper.contains(content)).toEqual(true)
+		expect(wrapper.contains(content)).toBe(true)
 	})
 })
 
 describe ('attribute in a list', () => {
-	const wrapper = shallow(<Attribute content='test' keyed='1' />)
+	const wrapper = shallow(<Attribute content='test' keyed={1} />)
 	
-	it('renders a content div', () => {
-		
+	it('renders the top-level div with a no-style class', () => {
+	  expect(wrapper.find('.no-style')).to.have.length(1)
+	})
+
+	it('renders a content div in an empty Link', () => {
+		let content = <div className='attribute-list-item' key={1}>
+			<Link className='attribute-link' to=''>test</Link>
+		</div>
+		expect(wrapper.contains(content)).toBe(true)
 	})
 	
 	it('renders a content link', () => {
 		wrapper.setProps({ link: '/link' })
-
+		let content = <div className='attribute-list-item' key={1}>
+			<Link className='attribute-link' to='/link'>test</Link>
+		</div>
 	})
 	
 	it('renders a postlink', () => {
@@ -37,6 +56,7 @@ describe ('attribute in a list', () => {
 	})
 	
 	it('renders a long attribute', () => {
+		wrapper.setProps({ long: true })
 		
 	})
 })
@@ -59,11 +79,6 @@ describe ('solo attribute with a link and a postlink', () => {
 
 /* 
 // EXAMPLES
-
-it('renders three <Foo /> components', () => {
-  const wrapper = shallow(<MyComponent />);
-  expect(wrapper.find(Foo)).to.have.length(3);
-});
 
 it('renders an `.icon-star`', () => {
   const wrapper = shallow(<MyComponent />);

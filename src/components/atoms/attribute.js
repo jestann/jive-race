@@ -7,6 +7,7 @@ const Attribute = (props) => {
   
   // an attribute could include these props: label, content, link, postlink, keyed (for a list), long (boolean),
   let postlink = props.postlink ? props.postlink : ''
+  let link = props.link ? props.link : ''
   let mainCssLabel = 'no-style'
   let attributeLabel = ''
   let attribute = ''
@@ -51,7 +52,7 @@ Attribute.propTypes = {
   label: PropTypes.string, // not used in a list
   content: PropTypes.string.isRequired,
   link: PropTypes.string,
-  postLink: PropTypes.string,
+  postlink: PropTypes.string,
   keyed: PropTypes.number, // only used in a list
   long: PropTypes.bool // only used if long
 }
