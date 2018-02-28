@@ -92,6 +92,8 @@ it('should be able to run tests', () => {
     expect(1 + 2).toEqual(3)
 })
 
+/* 
+
 // TEST
 
 // what it renders + what it passes to them
@@ -101,59 +103,11 @@ it('should be able to run tests', () => {
 // context
 // life cycle side effects: what happens when mounted/unmounted?
 
-
-/* 
 // EXAMPLES
-
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App/>, div);
-  
-it('renders welcome message', () => {
-  const wrapper = shallow(<App />)
-  const welcome = <h2>Welcome to React</h2>
-  // expect(wrapper.contains(welcome)).to.equal(true)
-  expect(wrapper.contains(welcome)).toEqual(true)
-})
-
-it('renders three <Foo /> components', () => {
-  const wrapper = shallow(<MyComponent />);
-  expect(wrapper.find(Foo)).to.have.length(3);
-});
-
-it('renders an `.icon-star`', () => {
-  const wrapper = shallow(<MyComponent />);
-  expect(wrapper.find('.icon-star')).to.have.length(1);
-});
-
-it('renders children when passed in', () => {
-  const wrapper = shallow((
-    <MyComponent>
-      <div className="unique" />
-    </MyComponent>
-  ));
-  expect(wrapper.contains(<div className="unique" />)).to.equal(true);
-});
 
 it('simulates click events', () => {
   const onButtonClick = sinon.spy();
   const wrapper = shallow(<Foo onButtonClick={onButtonClick} />);
-  wrapper.find('button').simulate('click');
-  expect(onButtonClick).to.have.property('callCount', 1);
-});
-
-it('allows us to set props', () => {
-  const wrapper = mount(<Foo bar="baz" />);
-  expect(wrapper.props().bar).to.equal('baz');
-  wrapper.setProps({ bar: 'foo' });
-  expect(wrapper.props().bar).to.equal('foo');
-});
-
-it('simulates click events', () => {
-  const onButtonClick = sinon.spy();
-  const wrapper = mount((
-    <Foo onButtonClick={onButtonClick} />
-  ));
   wrapper.find('button').simulate('click');
   expect(onButtonClick).to.have.property('callCount', 1);
 });

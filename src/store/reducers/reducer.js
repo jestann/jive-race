@@ -1,4 +1,5 @@
-/*
+import redux, { createStore, combineReducers } from 'redux'
+
 import Fetcher from './../../tools/fetcher'
 const fetcher = new Fetcher()
 
@@ -9,25 +10,72 @@ const initialState = {
   user: null,
   message: null,
   isError: false,
-  messageVisible: false
-  // data: null
+  messageVisible: false,
+  data: null
 }
 
+const main = combineReducers({ auth, users })
 
-const reducer = (state = initialState, action = {}) => {
+const main = (state = initialState, action) => {
+  return { 
+    auth: auth(state.auth, action),
+    users: users(state.users, action)
+  }
+}
+
+const users = (state = [], action) => {
+  switch (action.type) {
+    case 'NEW_USER':
+      return [
+        ...state,
+        user(undefined, action)
+      ]
+    case 'UPDATE_USER':
+      return state.map((user) => { user(user, action) })
+  }
+}
+
+const user = (state = {}, action) {
+  switch (action.type) {
+    case 'NEW_USER':
+      return {
+        id: action.id,
+        name: action.name
+      }
+    case 'UPDATE_USER':
+      return 
+  }
+}
+
+/*
+// UI STUFF
+onClick=store.dispatch({ action })
+{this.props.users.map({ <div>user.stuff</div> })}
+<App {...store.getState()} />
+subscribe(render)
+*/
+  
+
+// add error handling
+const auth = (state = initialState, action) => {
   switch (action.type) {
     case 'LOGIN':
-      console.log("You chose a book!")
-      return { ...state, currentBook: action.book }
+      let data = await this.fetchIt('/auth/login', 'PUT', undefined, { username: action.username, password: action.password })
+        if (data.success) { data.loggedIn = true }
+        // throw
+        return data // { currentUser: {logged in user}, token: (token), message: "logged in", loggedIn: boolean }
     case 'LOGOUT':
-        this.data = { success: true, code: 200, loggedIn: false, message: "Successfully logged out." }
-        this.token = null
-        this.user = null
-        this.message = this.data.message
-        this.messageVisible = true
-        this.isError = false
-        return this.data
-      return { ...state, currentBook: null }
+      let data = { success: true, code: 200, loggedIn: false, message: "Successfully logged out." }
+      return {
+        ...state,
+        loggedIn: data.loggedIn,
+        token: null,
+        user: null,
+        message: data.message,
+        isError: false,
+        messageVisible: true,
+        data: data
+      }
     default:
       return state
   }

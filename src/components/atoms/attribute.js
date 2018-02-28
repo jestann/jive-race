@@ -14,10 +14,17 @@ const Attribute = (props) => {
 
   // if it's keyed, it's an attribute list item
   if (props.keyed >= 0) {
-    attribute = <div className='attribute-list-item' key={props.keyed}>
-      <Link className='attribute-link' to={props.link}>{props.content}</Link>
-      {postlink}
-    </div>
+    if (props.link) { 
+	    attribute = <div className='attribute-list-item' key={props.keyed}>
+	      <Link className='attribute-link' to={props.link}>{props.content}</Link>
+	      {postlink}
+	    </div>
+    } else {
+	    attribute = <div className='attribute-list-item' key={props.keyed}>
+	      {props.content}
+	      {postlink}
+	    </div>
+    }
   } 
   
   // otherwise, it's a regular attribute
@@ -50,7 +57,7 @@ const Attribute = (props) => {
 
 Attribute.propTypes = {
   label: PropTypes.string, // not used in a list
-  content: PropTypes.string.isRequired,
+  content: PropTypes.string, // is required
   link: PropTypes.string,
   postlink: PropTypes.string,
   keyed: PropTypes.number, // only used in a list
