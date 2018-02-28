@@ -6,18 +6,21 @@ Jive Race is a team-building race application. Users can register for races and 
 
 ### Build Frameworks
 
-This project is built on [React](https://reactjs.org/) with [React Router 4](https://www.npmjs.com/package/react-router-dom), hosted on [AWS S3](https://aws.amazon.com/s3/). It was initialized from [create-react-app](https://github.com/facebookincubator/create-react-app).
+This project is built on [React](https://reactjs.org/) with [React Router 4](https://www.npmjs.com/package/react-router-dom), hosted on [AWS S3](https://aws.amazon.com/s3/). 
 
 ### Dependencies
 
 - [Bootstrap 4](https://getbootstrap.com/)
 - [Sass](http://sass-lang.com/)
 - [reactstrap](https://reactstrap.github.io/)
-- [jQuery {bootstrap}](https://github.com/jquery/jquery)
-- [Popper.js {bootstrap}](https://github.com/FezVrasta/popper.js)
+- [react-markdown](https://github.com/rexxars/react-markdown)
+- [create-react-app](https://github.com/facebookincubator/create-react-app)
 - [node-sass-chokidar](https://github.com/michaelwayman/node-sass-chokidar)
 - [npm-run-all](https://github.com/mysticatea/npm-run-all)
-- [react-markdown](https://github.com/rexxars/react-markdown)
+
+### Testing
+
+This application uses [Jest](https://facebook.github.io/jest/) with [Enzyme](http://airbnb.io/enzyme/) for testing. Test files are colocated with their associated component files.
 
 ### Project Objectives
 
@@ -79,8 +82,6 @@ This app has the following file structure.
 │   │   └── ...
 │   ├── css
 │   │   └── ...
-│   ├── spec
-│   │   └── ...
 │   ├── styles
 │   │   └── ...
 │   ├── templates
@@ -100,11 +101,14 @@ This app is still in development. These are the current development objectives.
 
 - [X] Overhaul custom design scheme to improve mobile experience and implement [Bootstrap](https://getbootstrap.com/) and [Sass](http://sass-lang.com/).
 - [X] Add markdown rendering for static content.
+- [X] Refactor all modules and file system to better integrate state management and container/component paradigms.
+- [ ] Flesh out unit testing on existing visual components, emphasizing testing business logic.
 - [ ] Fully integrate authentication functionality with API and across entire site.
 - [ ] Integrate model show pages with API and add edit/delete buttons based on user authorization. 
 - [ ] Integrate team membership functionality with API.
+- [ ] Integrate separate state management/change modules and store.
 
-The basic visual components and design functionality have been built and integration with the API is in progress.
+The basic visual components and design functionality have been built, along with a custom module for integrating asynchronous API requests and authentication state management with the rest of the application.
 
 ### Visuals
 
