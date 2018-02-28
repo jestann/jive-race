@@ -1,7 +1,6 @@
 // Singleton class for fetching data from Jive Race API
 
 class Fetcher {
-    // don't need to store this data in the fetcher class; store in redux store
     constructor () {
         this.url = 'https://jive-race-api.herokuapp.com' // unchanged
         this.token = null
@@ -44,7 +43,7 @@ class Fetcher {
             if (data.message) { data.action.push("SEND_MESSAGE") }
             return data // { success: true, code: 200, action: [ ... ], token: token, currentUser: {currentUser}, data: (data), message: "message" }
             
-        /* This could return internal errors to the user ... directly returning a catch statement */
+        /* Note: this could return internal errors to the user ... directly returning a catch statement */
         } catch (error) {
             let data = this.makeErr(error)
             data.action = [].push("SEND_ERROR")
