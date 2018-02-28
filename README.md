@@ -15,8 +15,12 @@ This project is built on [React](https://reactjs.org/) with [React Router 4](htt
 - [reactstrap](https://reactstrap.github.io/)
 - [react-markdown](https://github.com/rexxars/react-markdown)
 - [create-react-app](https://github.com/facebookincubator/create-react-app)
+- [node-sass-chokidar](https://github.com/michaelwayman/node-sass-chokidar)
+- [npm-run-all](https://github.com/mysticatea/npm-run-all)
 
-This application uses [Jest](https://facebook.github.io/jest/) with [Enzyme](http://airbnb.io/enzyme/) for testing.
+### Testing
+
+This application uses [Jest](https://facebook.github.io/jest/) with [Enzyme](http://airbnb.io/enzyme/) for testing. Test files are colocated with their associated component files.
 
 ### Project Objectives
 
