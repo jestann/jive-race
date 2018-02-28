@@ -108,7 +108,7 @@ This app is still in development. These are the current development objectives.
 - [ ] Integrate team membership functionality with API.
 - [ ] Integrate separate state management/change modules and store.
 
-The basic visual components and design functionality have been built, along with a full custom module for integrating asynchronous API requests and authentication state management with the rest of the application.
+The basic visual components and design functionality have been built, along with a custom module for integrating asynchronous API requests and authentication state management with the rest of the application.
 
 ### Visuals
 
