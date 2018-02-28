@@ -79,8 +79,6 @@ This app has the following file structure.
 │   │   └── ...
 │   ├── css
 │   │   └── ...
-│   ├── spec
-│   │   └── ...
 │   ├── styles
 │   │   └── ...
 │   ├── templates
@@ -100,9 +98,11 @@ This app is still in development. These are the current development objectives.
 
 - [X] Overhaul custom design scheme to improve mobile experience and implement [Bootstrap](https://getbootstrap.com/) and [Sass](http://sass-lang.com/).
 - [X] Add markdown rendering for static content.
+- [X] Refactor all modules and file system to better integrate state management and container/component paradigms.
 - [ ] Fully integrate authentication functionality with API and across entire site.
 - [ ] Integrate model show pages with API and add edit/delete buttons based on user authorization. 
 - [ ] Integrate team membership functionality with API.
+- [ ] Integrate separate state management/change modules and store.
 
 The basic visual components and design functionality have been built and integration with the API is in progress.
 
